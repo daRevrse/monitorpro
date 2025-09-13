@@ -277,4 +277,79 @@ function authenticateToken(req, res, next) {
   });
 }
 
+// POST /api/auth/register - Inscription (admin seulement)
+router.post(
+  "/register",
+  [
+    authenticateToken,
+    // requireRole(["admin"]),
+    body("email").isEmail().normalizeEmail(),
+    body("password").isLength({ min: 8 }),
+    body("first_name").isLength({ min: 1, max: 100 }).trim(),
+    body("last_name").isLength({ min: 1, max: 100 }).trim(),
+    body("role").isIn(["admin", "manager", "technician", "client"]),
+    body("company_id").optional().isInt(),
+  ],
+  async (req, res) => {
+    try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({
+          success: false,
+          errors: errors.array(),
+        });
+      }
+
+      const { email, password, first_name, last_name, role, company_id } =
+        req.body;
+
+      // Vérifier si l'utilisateur existe déjà
+      const existingUser = await User.findOne({ where: { email } });
+      if (existingUser) {
+        return res.status(400).json({
+          success: false,
+          message: "Un utilisateur avec cet email existe déjà",
+        });
+      }
+
+      // Utiliser la company de l'admin si pas spécifiée
+      const finalCompanyId = company_id || req.user.company_id;
+
+      // Hasher le mot de passe
+      const passwordHash = await User.hashPassword(password);
+
+      // Créer l'utilisateur
+      const user = await User.create({
+        email,
+        password_hash: passwordHash,
+        first_name,
+        last_name,
+        role,
+        company_id: finalCompanyId,
+        is_active: true,
+        email_verified: true,
+      });
+
+      logger.info(`Nouvel utilisateur créé par admin ${req.user.id}: ${email}`);
+
+      res.status(201).json({
+        success: true,
+        message: "Utilisateur créé avec succès",
+        user: {
+          id: user.id,
+          email: user.email,
+          name: user.getFullName(),
+          role: user.role,
+        },
+      });
+    } catch (error) {
+      logger.error("Erreur création utilisateur:", error);
+      res.status(500).json({
+        success: false,
+        message: "Erreur lors de la création de l'utilisateur",
+      });
+    }
+  }
+);
+
 module.exports = router;

@@ -1,0 +1,80 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: monitorpro-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: monitorpro
+      MYSQL_USER: monitorpro
+      MYSQL_PASSWORD: monitorpro123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/migrations:/docker-entrypoint-initdb.d
+    networks:
+      - monitorpro-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: monitorpro-backend
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_NAME=monitorpro
+      - DB_USER=monitorpro
+      - DB_PASSWORD=monitorpro123
+      - JWT_SECRET=your_super_secret_jwt_key_change_in_production
+      - JWT_REFRESH_SECRET=your_refresh_secret_key_change_in_production
+      - PORT=3001
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mysql
+    volumes:
+      - ./backend/logs:/app/logs
+    networks:
+      - monitorpro-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: monitorpro-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - monitorpro-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: monitorpro-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - monitorpro-network
+
+volumes:
+  mysql_data:
+
+networks:
+  monitorpro-network:
+    driver: bridge

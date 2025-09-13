@@ -47,6 +47,33 @@ export const AuthProvider = ({ children }) => {
     error: null,
   });
 
+  const verifyToken = async (token) => {
+    try {
+      const response = await fetch("/api/auth/verify", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // On remet à jour le contexte si le token est valide
+        dispatch({
+          type: "LOGIN_SUCCESS",
+          payload: { user: data.user, access_token: token },
+        });
+      } else {
+        // Token invalide → on tente un refresh
+        await refreshAccessToken();
+      }
+    } catch (error) {
+      console.error("Erreur lors de la vérification du token:", error);
+      await refreshAccessToken();
+    }
+  };
+
   useEffect(() => {
     // Vérifier token au démarrage
     const token = localStorage.getItem("accessToken");

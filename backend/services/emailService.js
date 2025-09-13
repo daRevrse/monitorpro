@@ -24,7 +24,7 @@ class EmailService {
       };
 
       // Créer le transporteur
-      this.transporter = nodemailer.createTransporter(smtpConfig);
+      this.transporter = nodemailer.createTransport(smtpConfig);
 
       // Vérifier la configuration
       this.transporter.verify((error, success) => {
