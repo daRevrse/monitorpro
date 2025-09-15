@@ -4,24 +4,38 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // ✅ Couleur principale Bordeaux
         primary: {
-          50: "#eff6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#3b82f6",
-          600: "#2563eb",
-          700: "#1d4ed8",
-          800: "#1e40af",
-          900: "#1e3a8a",
+          50: "#fdf2f2",
+          100: "#fce8e8",
+          200: "#fbd5d5",
+          300: "#f8b4b4",
+          400: "#f98080",
+          500: "#f56565",
+          600: "#e53e3e",
+          700: "#c53030",
+          800: "#800020", // 🍷 Bordeaux principal
+          900: "#5c1a1a",
+          950: "#2d0a0a",
+        },
+        bordeaux: {
+          50: "#fdf2f2",
+          100: "#fce8e8",
+          200: "#fbd5d5",
+          300: "#f8b4b4",
+          400: "#f98080",
+          500: "#f56565",
+          600: "#e53e3e",
+          700: "#c53030",
+          800: "#800020", // 🍷 Bordeaux principal
+          900: "#5c1a1a",
+          950: "#2d0a0a",
         },
       },
       animation: {
         "fade-in": "fadeIn 0.3s ease-in-out",
         "slide-in": "slideIn 0.3s ease-in-out",
-        "pulse-green": "pulseGreen 2s infinite",
-        "pulse-red": "pulseRed 2s infinite",
+        "pulse-bordeaux": "pulseBordeaux 2s infinite",
       },
       keyframes: {
         fadeIn: {
@@ -32,13 +46,9 @@ module.exports = {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0)" },
         },
-        pulseGreen: {
-          "0%, 100%": { boxShadow: "0 0 0 0 rgba(16, 185, 129, 0.7)" },
-          "50%": { boxShadow: "0 0 0 10px rgba(16, 185, 129, 0)" },
-        },
-        pulseRed: {
-          "0%, 100%": { boxShadow: "0 0 0 0 rgba(239, 68, 68, 0.7)" },
-          "50%": { boxShadow: "0 0 0 10px rgba(239, 68, 68, 0)" },
+        pulseBordeaux: {
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(128, 0, 32, 0.7)" },
+          "50%": { boxShadow: "0 0 0 10px rgba(128, 0, 32, 0)" },
         },
       },
     },

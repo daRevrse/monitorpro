@@ -46,6 +46,13 @@ class MonitorProApp {
   initializeMiddleware() {
     logger.info("Configuration des middlewares...");
 
+    // ✅ Configuration Trust Proxy - IMPORTANT pour éviter l'erreur rate limit
+    if (process.env.NODE_ENV === "production") {
+      this.app.set("trust proxy", 1); // Faire confiance au premier proxy
+    } else {
+      this.app.set("trust proxy", "loopback"); // Développement local
+    }
+
     // Sécurité
     this.app.use(
       helmet({
@@ -56,6 +63,7 @@ class MonitorProApp {
             styleSrc: ["'self'", "'unsafe-inline'"],
             scriptSrc: ["'self'"],
             imgSrc: ["'self'", "data:", "https:"],
+            connectSrc: ["'self'", "wss:", "ws:"],
           },
         },
       })
@@ -75,7 +83,7 @@ class MonitorProApp {
       })
     );
 
-    // Rate limiting
+    // Rate limiting général
     const limiter = rateLimit({
       windowMs: 15 * 60 * 1000, // 15 minutes
       max: 100, // limite de 100 requêtes par IP
@@ -85,9 +93,19 @@ class MonitorProApp {
       },
       standardHeaders: true,
       legacyHeaders: false,
+      keyGenerator: (req) => {
+        // Utiliser l'IP réelle en tenant compte des proxies
+        return req.ip || req.connection.remoteAddress || "unknown";
+      },
       skip: (req) => {
         // Ignorer le rate limiting pour les routes de monitoring internes
-        return req.path.startsWith("/api/monitoring/internal");
+        return (
+          req.path.startsWith("/api/monitoring/internal") ||
+          req.path === "/health"
+        );
+      },
+      onExceeded: (req, res) => {
+        logger.warn(`Rate limit exceeded for IP: ${req.ip}`);
       },
     });
 
@@ -101,6 +119,16 @@ class MonitorProApp {
           "Trop de tentatives de connexion, veuillez réessayer plus tard.",
       },
       skipSuccessfulRequests: true,
+      keyGenerator: (req) => {
+        return req.ip || req.connection.remoteAddress || "unknown";
+      },
+      onExceeded: (req, res) => {
+        logger.warn(
+          `Auth rate limit exceeded for IP: ${req.ip}, Email: ${
+            req.body.email || "unknown"
+          }`
+        );
+      },
     });
 
     this.app.use("/api/auth/login", authLimiter);
@@ -113,7 +141,7 @@ class MonitorProApp {
     // Logging des requêtes en développement
     if (process.env.NODE_ENV === "development") {
       this.app.use((req, res, next) => {
-        logger.debug(`${req.method} ${req.path}`);
+        logger.debug(`${req.method} ${req.path} - IP: ${req.ip}`);
         next();
       });
     }
@@ -201,7 +229,7 @@ class MonitorProApp {
 
       // Synchroniser les modèles en développement
       if (process.env.NODE_ENV === "development") {
-        await sequelize.sync({ alter: true });
+        await sequelize.sync({ alter: false }); // Changed to false to avoid altering existing tables
         logger.info("Modèles synchronisés avec la base de données");
       }
     } catch (error) {
@@ -333,7 +361,11 @@ class MonitorProApp {
     logger.info(`Signal ${signal} reçu, arrêt en cours...`);
 
     // Arrêter les jobs cron
-    monitorCron.stopAllJobs();
+    try {
+      monitorCron.stopAllJobs();
+    } catch (error) {
+      logger.error("Erreur lors de l'arrêt des jobs cron:", error);
+    }
 
     // Fermer les connexions WebSocket
     this.io.close(() => {

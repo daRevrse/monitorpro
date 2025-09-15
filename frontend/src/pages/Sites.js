@@ -106,7 +106,7 @@ const Sites = () => {
             setEditingSite(null);
             setShowModal(true);
           }}
-          className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-bordeaux-600 text-white rounded-lg hover:bg-bordeaux-700 transition-colors"
         >
           <Plus className="w-4 h-4" />
           Ajouter un site
@@ -337,7 +337,7 @@ const Sites = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                  className="px-4 py-2 bg-bordeaux-600 text-white rounded-lg hover:bg-bordeaux-700 transition-colors"
                 >
                   {editingSite ? "Modifier" : "Ajouter"}
                 </button>

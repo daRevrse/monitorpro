@@ -150,3 +150,164 @@
 {"level":"info","message":"Vérification forcée demandée pour https://adactchad.org par admin@example.com","timestamp":"2025-09-12 22:11:34"}
 {"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-12 22:11:38"}
 {"level":"info","message":"Signal SIGINT reçu, arrêt en cours...","timestamp":"2025-09-12 22:12:00"}
+{"level":"info","message":"Configuration des middlewares...","timestamp":"2025-09-13 12:14:22"}
+{"level":"info","message":"Configuration des routes...","timestamp":"2025-09-13 12:14:22"}
+{"level":"info","message":"Connexion à la base de données...","timestamp":"2025-09-13 12:14:22"}
+{"level":"info","message":"Configuration WebSocket...","timestamp":"2025-09-13 12:14:22"}
+{"level":"info","message":"Démarrage des tâches cron de monitoring","timestamp":"2025-09-13 12:14:22"}
+{"level":"info","message":"Toutes les tâches cron sont démarrées","timestamp":"2025-09-13 12:14:22"}
+{"level":"info","message":"Environnement: undefined","timestamp":"2025-09-13 12:14:22"}
+{"level":"info","message":"URL de santé: http://localhost:3001/health","timestamp":"2025-09-13 12:14:22"}
+{"level":"info","message":"Service email configuré avec succès","timestamp":"2025-09-13 12:14:23"}
+{"level":"info","message":"Démarrage du service de monitoring","timestamp":"2025-09-13 12:14:27"}
+{"level":"info","message":"2 sites chargés pour monitoring","timestamp":"2025-09-13 12:14:27"}
+{"level":"info","message":"Service de monitoring démarré via cron","timestamp":"2025-09-13 12:14:27"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 12:15:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 12:19:27"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 12:19:27"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 12:20:00"}
+{"level":"info","message":"Configuration des middlewares...","timestamp":"2025-09-13 12:21:14"}
+{"level":"info","message":"Configuration des routes...","timestamp":"2025-09-13 12:21:14"}
+{"level":"info","message":"Connexion à la base de données...","timestamp":"2025-09-13 12:21:14"}
+{"level":"info","message":"Configuration WebSocket...","timestamp":"2025-09-13 12:21:14"}
+{"level":"info","message":"Démarrage des tâches cron de monitoring","timestamp":"2025-09-13 12:21:14"}
+{"level":"info","message":"Toutes les tâches cron sont démarrées","timestamp":"2025-09-13 12:21:14"}
+{"level":"info","message":"Environnement: undefined","timestamp":"2025-09-13 12:21:14"}
+{"level":"info","message":"URL de santé: http://localhost:3001/health","timestamp":"2025-09-13 12:21:15"}
+{"level":"info","message":"Service email configuré avec succès","timestamp":"2025-09-13 12:21:16"}
+{"level":"info","message":"Démarrage du service de monitoring","timestamp":"2025-09-13 12:21:19"}
+{"level":"info","message":"2 sites chargés pour monitoring","timestamp":"2025-09-13 12:21:19"}
+{"level":"info","message":"Service de monitoring démarré via cron","timestamp":"2025-09-13 12:21:19"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 12:25:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 12:26:20"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 12:26:20"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 12:30:00"}
+{"level":"debug","message":"Nettoyage des cooldowns d'alertes effectué","timestamp":"2025-09-13 12:30:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 12:31:25"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 12:31:30"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 12:35:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 12:36:31"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 12:36:36"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 12:40:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 12:41:36"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 12:41:46"}
+{"level":"info","message":"Signal SIGINT reçu, arrêt en cours...","timestamp":"2025-09-13 12:43:50"}
+{"level":"info","message":"Configuration des middlewares...","timestamp":"2025-09-13 12:44:03"}
+{"level":"info","message":"Configuration des routes...","timestamp":"2025-09-13 12:44:03"}
+{"level":"info","message":"Connexion à la base de données...","timestamp":"2025-09-13 12:44:03"}
+{"level":"info","message":"Configuration WebSocket...","timestamp":"2025-09-13 12:44:03"}
+{"level":"info","message":"Démarrage des tâches cron de monitoring","timestamp":"2025-09-13 12:44:03"}
+{"level":"info","message":"Toutes les tâches cron sont démarrées","timestamp":"2025-09-13 12:44:03"}
+{"level":"info","message":"Environnement: undefined","timestamp":"2025-09-13 12:44:03"}
+{"level":"info","message":"URL de santé: http://localhost:3001/health","timestamp":"2025-09-13 12:44:03"}
+{"level":"info","message":"Service email configuré avec succès","timestamp":"2025-09-13 12:44:05"}
+{"level":"info","message":"Démarrage du service de monitoring","timestamp":"2025-09-13 12:44:08"}
+{"level":"info","message":"2 sites chargés pour monitoring","timestamp":"2025-09-13 12:44:08"}
+{"level":"info","message":"Service de monitoring démarré via cron","timestamp":"2025-09-13 12:44:08"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 12:45:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 12:49:09"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 12:49:09"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 12:50:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 12:54:14"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 12:54:19"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 12:55:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 12:59:20"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 12:59:30"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 13:00:00"}
+{"level":"debug","message":"Nettoyage des cooldowns d'alertes effectué","timestamp":"2025-09-13 13:00:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 13:04:25"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 13:04:40"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 13:05:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 13:09:31"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 13:09:51"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 13:10:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 13:14:37"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 13:15:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 13:15:02"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 13:19:42"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 13:20:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 13:20:12"}
+{"error":"Route non trouvée - /main.91ee7d5e3b731a18b429.hot-update.json","ip":"127.0.0.1","level":"error","message":"Erreur serveur:","method":"GET","stack":"Error: Route non trouvée - /main.91ee7d5e3b731a18b429.hot-update.json\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\app.js:317:21\n    at Layer.handle [as handle_request] (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\app.js:153:7\n    at Layer.handle [as handle_request] (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:286:9","timestamp":"2025-09-13 13:22:58","url":"/main.91ee7d5e3b731a18b429.hot-update.json","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0"}
+{"level":"info","message":"Vérification forcée demandée pour https://adactchad.org par admin@example.com","timestamp":"2025-09-13 13:24:40"}
+{"level":"info","message":"Vérification forcée demandée pour https://sodexca.com/ par admin@example.com","timestamp":"2025-09-13 13:24:42"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 13:24:43"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 13:24:48"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 13:25:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 13:29:48"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 13:29:53"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 13:30:00"}
+{"level":"debug","message":"Nettoyage des cooldowns d'alertes effectué","timestamp":"2025-09-13 13:30:00"}
+{"date":"Sat Sep 13 2025 13:32:34 GMT+0000 (temps universel coordonné)","error":{},"level":"error","message":"unhandledRejection: logger is not defined\nReferenceError: logger is not defined\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\routes\\auth.js:346:7\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","os":{"loadavg":[0,0,0],"uptime":322037.187},"process":{"argv":["C:\\Program Files\\nodejs\\node.exe","C:\\Users\\Administrateur\\monitorpro\\backend\\server.js"],"cwd":"C:\\Users\\Administrateur\\monitorpro\\backend","execPath":"C:\\Program Files\\nodejs\\node.exe","gid":null,"memoryUsage":{"arrayBuffers":258838,"external":3672781,"heapTotal":36597760,"heapUsed":31718584,"rss":34594816},"pid":3496,"uid":null,"version":"v20.18.0"},"rejection":true,"stack":"ReferenceError: logger is not defined\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\routes\\auth.js:346:7\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-09-13 13:32:35","trace":[{"column":7,"file":"C:\\Users\\Administrateur\\monitorpro\\backend\\routes\\auth.js","function":null,"line":346,"method":null,"native":false},{"column":5,"file":"node:internal/process/task_queues","function":"process.processTicksAndRejections","line":95,"method":"processTicksAndRejections","native":false}]}
+{"level":"error","message":"Promesse rejetée non gérée: logger is not defined","stack":"ReferenceError: logger is not defined\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\routes\\auth.js:346:7\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-09-13 13:32:35"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 13:34:54"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 13:35:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 13:35:04"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 13:39:59"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 13:40:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 13:40:09"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 13:45:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 13:45:05"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 13:45:15"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-13 14:34:16"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-13 14:34:16"}
+{"level":"info","message":"Statut changé pour https://sodexca.com/: up → down","timestamp":"2025-09-13 14:34:17"}
+{"level":"info","message":"Nouvel incident créé pour https://sodexca.com/: high","timestamp":"2025-09-13 14:34:17"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://sodexca.com/","timestamp":"2025-09-13 14:34:17"}
+{"alerts":{"activeCooldowns":1,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-13 14:35:00"}
+{"level":"info","message":"Signal SIGINT reçu, arrêt en cours...","timestamp":"2025-09-13 14:36:37"}
+{"level":"info","message":"Configuration des middlewares...","timestamp":"2025-09-15 11:39:59"}
+{"level":"info","message":"Configuration des routes...","timestamp":"2025-09-15 11:39:59"}
+{"level":"info","message":"Connexion à la base de données...","timestamp":"2025-09-15 11:39:59"}
+{"level":"info","message":"Configuration WebSocket...","timestamp":"2025-09-15 11:39:59"}
+{"level":"info","message":"Démarrage des tâches cron de monitoring","timestamp":"2025-09-15 11:39:59"}
+{"level":"info","message":"Toutes les tâches cron sont démarrées","timestamp":"2025-09-15 11:39:59"}
+{"level":"info","message":"Environnement: undefined","timestamp":"2025-09-15 11:39:59"}
+{"level":"info","message":"URL de santé: http://localhost:3001/health","timestamp":"2025-09-15 11:39:59"}
+{"level":"error","message":"⚠️ Service de monitoring arrêté - redémarrage...","timestamp":"2025-09-15 11:40:00"}
+{"level":"info","message":"Démarrage du service de monitoring","timestamp":"2025-09-15 11:40:00"}
+{"level":"info","message":"2 sites chargés pour monitoring","timestamp":"2025-09-15 11:40:00"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":false,"maxConcurrentChecks":50,"sitesInQueue":0},"timestamp":"2025-09-15 11:40:00"}
+{"level":"info","message":"Service email configuré avec succès","timestamp":"2025-09-15 11:40:01"}
+{"level":"warn","message":"Le service de monitoring est déjà en cours d'exécution","timestamp":"2025-09-15 11:40:04"}
+{"level":"info","message":"Service de monitoring démarré via cron","timestamp":"2025-09-15 11:40:04"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 11:45:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-15 11:45:01"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-15 11:45:01"}
+{"level":"info","message":"Statut changé pour https://sodexca.com/: down → up","timestamp":"2025-09-15 11:45:07"}
+{"level":"info","message":"Incidents résolus pour https://sodexca.com/","timestamp":"2025-09-15 11:45:07"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://sodexca.com/","timestamp":"2025-09-15 11:45:07"}
+{"alerts":{"activeCooldowns":1,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 11:50:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-15 11:50:06"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-15 11:50:11"}
+{"alerts":{"activeCooldowns":1,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 11:55:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-15 11:55:12"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-15 11:55:17"}
+{"alerts":{"activeCooldowns":1,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 12:00:00"}
+{"level":"debug","message":"Nettoyage des cooldowns d'alertes effectué","timestamp":"2025-09-15 12:00:00"}
+{"level":"info","message":"Redémarrage programmé du service de monitoring","timestamp":"2025-09-15 12:00:00"}
+{"level":"info","message":"Service de monitoring arrêté","timestamp":"2025-09-15 12:00:00"}
+{"level":"info","message":"Démarrage du service de monitoring","timestamp":"2025-09-15 12:00:10"}
+{"level":"info","message":"2 sites chargés pour monitoring","timestamp":"2025-09-15 12:00:10"}
+{"level":"info","message":"Service de monitoring redémarré","timestamp":"2025-09-15 12:00:10"}
+{"alerts":{"activeCooldowns":1,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 12:05:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-15 12:05:10"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-15 12:05:10"}
+{"alerts":{"activeCooldowns":1,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 12:10:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-15 12:10:13"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-15 12:10:16"}
+{"alerts":{"activeCooldowns":1,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 12:15:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-15 12:15:16"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-15 12:15:21"}
+{"alerts":{"activeCooldowns":1,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 12:20:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-15 12:20:19"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-15 12:20:27"}
+{"alerts":{"activeCooldowns":1,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 12:25:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-15 12:25:22"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-15 12:25:32"}
+{"alerts":{"activeCooldowns":1,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 12:30:00"}
+{"level":"debug","message":"Nettoyage des cooldowns d'alertes effectué","timestamp":"2025-09-15 12:30:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-15 12:30:25"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-15 12:30:38"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":2},"timestamp":"2025-09-15 12:35:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2025-09-15 12:35:28"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2025-09-15 12:35:41"}

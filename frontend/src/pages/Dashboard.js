@@ -183,11 +183,13 @@ const Dashboard = () => {
             </div>
 
             <select
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-4 py-2 rounded-lg border border-gray-200 bg-white text-gray-700 shadow-sm 
+             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+             transition duration-200 ease-in-out cursor-pointer hover:border-gray-400"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
             >
-              <option value="all">Tous les statuts</option>
+              <option value="all">🌐 Tous les statuts</option>
               <option value="up">✅ Opérationnel</option>
               <option value="down">❌ En panne</option>
               <option value="warning">⚠️ Alerte</option>
@@ -198,7 +200,7 @@ const Dashboard = () => {
           <div className="flex gap-2">
             <button
               onClick={loadDashboardData}
-              className="flex items-center gap-2 px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-bordeaux-600 text-white rounded-lg hover:bg-bordeaux-700 transition-colors"
             >
               <RefreshCw className="w-4 h-4" />
               Actualiser
@@ -207,8 +209,8 @@ const Dashboard = () => {
               onClick={() => setViewMode("grid")}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 viewMode === "grid"
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  ? "bg-bordeaux-600 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-bordeaux-50 hover:text-bordeaux-700"
               }`}
             >
               Grille

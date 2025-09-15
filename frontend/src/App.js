@@ -32,14 +32,7 @@ function App() {
                       <Route path="/dashboard" element={<Dashboard />} />
                       <Route path="/sites" element={<Sites />} />
                       <Route path="/reports" element={<Reports />} />
-                      <Route
-                        path="/users"
-                        element={
-                          <ProtectedRoute requiredRole="admin">
-                            <UserManagement />
-                          </ProtectedRoute>
-                        }
-                      />
+                      <Route path="/users" element={<UserManagement />} />
                     </Routes>
                   </Layout>
                 </ProtectedRoute>
