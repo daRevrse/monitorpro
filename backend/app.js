@@ -16,6 +16,7 @@ const authRoutes = require("./routes/auth");
 const websiteRoutes = require("./routes/websites");
 const monitoringRoutes = require("./routes/monitoring");
 const incidentRoutes = require("./routes/incidents");
+const publicRoutes = require("./routes/public");
 
 // Services et Jobs
 const monitorCron = require("./jobs/monitorCron");
@@ -170,6 +171,7 @@ class MonitorProApp {
     });
 
     // Routes API
+    this.app.use("/api/public", publicRoutes);
     this.app.use("/api/auth", authRoutes);
     this.app.use("/api/websites", websiteRoutes);
     this.app.use("/api/monitoring", monitoringRoutes);

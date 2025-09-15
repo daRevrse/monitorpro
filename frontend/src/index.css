@@ -144,3 +144,92 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Ajouts à src/index.css (gardez votre contenu existant et ajoutez ceci) */
+
+/* Animations pour la landing page */
+.floating-icons {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Animation de fade-in */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animations de pulse avec bordeaux */
+.animate-pulse-bordeaux {
+  animation: pulseBordeaux 2s infinite;
+}
+
+@keyframes pulseBordeaux {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(128, 0, 32, 0);
+  }
+}
+
+/* Scroll smooth pour toute la page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Amélioration scrollbar */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive améliorations */
+@media (max-width: 768px) {
+  .floating-icons {
+    display: none; /* Masquer les icônes flottantes sur mobile */
+  }
+}
+
+/* Focus states améliorés */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--bordeaux-primary);
+  outline-offset: 2px;
+}
+
+/* Loading spinner pour les boutons */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

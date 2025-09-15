@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Plus, Edit, Trash2, User, Shield } from "lucide-react";
+import { Plus, Edit, Trash2, User, Shield, RefreshCw } from "lucide-react";
 import api from "../../services/api";
 
 const UserManagement = () => {
@@ -81,17 +81,27 @@ const UserManagement = () => {
           </h1>
           <p className="text-gray-600">Gérez les accès à votre plateforme</p>
         </div>
-        <button
-          onClick={() => {
-            resetForm();
-            setEditingUser(null);
-            setShowModal(true);
-          }}
-          className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-        >
-          <Plus className="w-4 h-4" />
-          Nouvel utilisateur
-        </button>
+
+        <div className="flex gap-2">
+          <button
+            onClick={loadUsers}
+            className="flex items-center gap-2 px-4 py-2 bg-bordeaux-600 text-white rounded-lg hover:bg-bordeaux-700 transition-colors"
+          >
+            <RefreshCw className="w-4 h-4" />
+            Actualiser
+          </button>
+          <button
+            onClick={() => {
+              resetForm();
+              setEditingUser(null);
+              setShowModal(true);
+            }}
+            className="flex items-center gap-2 px-4 py-2 bg-bordeaux-600 text-white rounded-lg hover:bg-bordeaux-700 transition-colors"
+          >
+            <Plus className="w-4 h-4" />
+            Nouvel utilisateur
+          </button>
+        </div>
       </div>
 
       {/* Liste des utilisateurs */}
@@ -285,7 +295,7 @@ const UserManagement = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                  className="px-4 py-2 bg-bordeaux-600 text-white rounded-lg hover:bg-bordeaux-700 transition-colors"
                 >
                   {editingUser ? "Modifier" : "Créer"}
                 </button>

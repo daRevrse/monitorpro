@@ -23,10 +23,10 @@ const Layout = ({ children }) => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { id: "dashboard", name: "Dashboard", icon: Home, path: "/dashboard" },
-    { id: "sites", name: "Sites Web", icon: Monitor, path: "/sites" },
-    { id: "users", name: "Utilisateurs", icon: Users, path: "/users" },
-    { id: "reports", name: "Rapports", icon: BarChart3, path: "/reports" },
+    { id: "dashboard", name: "Dashboard", icon: Home, path: "/app/dashboard" },
+    { id: "sites", name: "Sites Web", icon: Monitor, path: "/app/sites" },
+    { id: "users", name: "Utilisateurs", icon: Users, path: "/app/users" },
+    { id: "reports", name: "Rapports", icon: BarChart3, path: "/app/reports" },
   ];
 
   const handleLogout = async () => {
@@ -38,59 +38,61 @@ const Layout = ({ children }) => {
     <div className="flex h-screen bg-gray-50">
       {/* Sidebar avec thème bordeaux */}
       <div
-        className={`bg-white shadow-lg transition-all duration-300 ${
+        className={`bg-white flex flex-col justify-between shadow-lg transition-all duration-300 ${
           sidebarOpen ? "w-64" : "w-18"
         }`}
       >
-        <div className="p-6 border-b">
-          <div className="flex items-center justify-between">
-            <div
-              className={`font-bold text-xl text-bordeaux-800 ${
-                !sidebarOpen && "hidden"
-              }`}
-            >
-              MonitorPro
+        <div>
+          <div className="p-6 border-b">
+            <div className="flex items-center justify-between">
+              <div
+                className={`font-bold text-xl text-bordeaux-800 ${
+                  !sidebarOpen && "hidden"
+                }`}
+              >
+                MonitorPro
+              </div>
+              <button
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+                className="p-2 rounded-lg hover:bg-bordeaux-50 transition-colors"
+              >
+                {sidebarOpen ? (
+                  <X className="w-5 h-5 text-bordeaux-600" />
+                ) : (
+                  <Menu className="w-5 h-5 text-bordeaux-600" />
+                )}
+              </button>
             </div>
-            <button
-              onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="p-2 rounded-lg hover:bg-bordeaux-50 transition-colors"
-            >
-              {sidebarOpen ? (
-                <X className="w-5 h-5 text-bordeaux-600" />
-              ) : (
-                <Menu className="w-5 h-5 text-bordeaux-600" />
-              )}
-            </button>
           </div>
+
+          <nav className="p-4">
+            <ul className="space-y-2">
+              {menuItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = location.pathname === item.path;
+                return (
+                  <li key={item.id}>
+                    <Link
+                      to={item.path}
+                      className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
+                        isActive
+                          ? "bg-bordeaux-50 text-bordeaux-800 border border-bordeaux-200"
+                          : "text-gray-600 hover:bg-bordeaux-50 hover:text-bordeaux-700"
+                      }`}
+                    >
+                      <Icon className="w-5 h-5 flex-shrink-0" />
+                      {sidebarOpen && (
+                        <span className="font-medium">{item.name}</span>
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
         </div>
 
-        <nav className="p-4">
-          <ul className="space-y-2">
-            {menuItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = location.pathname === item.path;
-              return (
-                <li key={item.id}>
-                  <Link
-                    to={item.path}
-                    className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
-                      isActive
-                        ? "bg-bordeaux-50 text-bordeaux-800 border border-bordeaux-200"
-                        : "text-gray-600 hover:bg-bordeaux-50 hover:text-bordeaux-700"
-                    }`}
-                  >
-                    <Icon className="w-5 h-5 flex-shrink-0" />
-                    {sidebarOpen && (
-                      <span className="font-medium">{item.name}</span>
-                    )}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-
-        <div className="p-6 border-t text-sm text-gray-500">
+        <div className="p-6 border-t text-sm text-gray-500 bottom-0">
           <div className={!sidebarOpen && "hidden"}>
             <Logo />
           </div>
@@ -141,29 +143,23 @@ const Layout = ({ children }) => {
 
                 {/* Profile Dropdown avec bordeaux */}
                 {profileMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border z-50">
-                    <div className="p-4 border-b">
-                      <div className="font-medium text-bordeaux-800">
-                        {user?.name}
-                      </div>
-                      <div className="text-sm text-bordeaux-500">
-                        {user?.email}
-                      </div>
-                    </div>
-                    <div className="p-2">
-                      <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-bordeaux-50 transition-colors">
-                        <User className="w-4 h-4 text-bordeaux-600" />
-                        <span className="text-bordeaux-700">Mon Profil</span>
-                      </button>
-                      <hr className="my-2" />
-                      <button
-                        onClick={handleLogout}
-                        className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-red-50 text-red-600 transition-colors"
-                      >
-                        <LogOut className="w-4 h-4" />
-                        <span>Déconnexion</span>
-                      </button>
-                    </div>
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+                    <Link
+                      to="/app/profile"
+                      className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                      onClick={() => setProfileMenuOpen(false)}
+                    >
+                      <User className="w-4 h-4 mr-3" />
+                      Mon Profil
+                    </Link>
+                    <hr className="my-1" />
+                    <button
+                      onClick={handleLogout}
+                      className="w-full flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
+                    >
+                      <LogOut className="w-4 h-4 mr-3" />
+                      Déconnexion
+                    </button>
                   </div>
                 )}
               </div>

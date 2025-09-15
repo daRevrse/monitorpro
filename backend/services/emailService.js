@@ -1,4 +1,4 @@
-// backend/services/emailService.js
+// backend/services/emailService.js (version corrigée)
 const nodemailer = require("nodemailer");
 const logger = require("../utils/logger");
 
@@ -23,7 +23,7 @@ class EmailService {
         },
       };
 
-      // Créer le transporteur
+      // ✅ CORRECTION: createTransport (pas createTransporter)
       this.transporter = nodemailer.createTransport(smtpConfig);
 
       // Vérifier la configuration
@@ -42,7 +42,291 @@ class EmailService {
     }
   }
 
-  // Envoyer un email d'alerte
+  // ✅ NOUVELLE FONCTION: Email de bienvenue
+  async sendWelcomeEmail(recipientEmail, welcomeData) {
+    if (!this.isConfigured) {
+      logger.warn(
+        "Service email non configuré - email de bienvenue non envoyé"
+      );
+      return false;
+    }
+
+    try {
+      const htmlContent = this.generateWelcomeEmailHTML(welcomeData);
+      const textContent = this.generateWelcomeEmailText(welcomeData);
+
+      const mailOptions = {
+        from: `"MonitorPro" <${
+          process.env.SMTP_FROM || process.env.SMTP_USER
+        }>`,
+        to: recipientEmail,
+        subject: `🎉 Bienvenue sur MonitorPro, ${welcomeData.firstName} !`,
+        text: textContent,
+        html: htmlContent,
+      };
+
+      const result = await this.transporter.sendMail(mailOptions);
+      logger.info(
+        `Email de bienvenue envoyé à ${recipientEmail} (${result.messageId})`
+      );
+      return true;
+    } catch (error) {
+      logger.error(
+        `Erreur lors de l'envoi de l'email de bienvenue à ${recipientEmail}:`,
+        error
+      );
+      return false;
+    }
+  }
+
+  // Générer le contenu HTML de l'email de bienvenue
+  generateWelcomeEmailHTML(welcomeData) {
+    const { firstName, companyName, loginUrl, selectedPlan } = welcomeData;
+
+    return `
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bienvenue sur MonitorPro</title>
+        <style>
+            body { 
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+                line-height: 1.6; 
+                color: #333; 
+                margin: 0; 
+                padding: 0; 
+                background-color: #f4f4f4; 
+            }
+            .container { 
+                max-width: 600px; 
+                margin: 0 auto; 
+                background-color: #ffffff; 
+                border-radius: 8px; 
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .header { 
+                background: linear-gradient(135deg, #800020 0%, #a6002b 100%); 
+                color: white; 
+                padding: 40px 20px; 
+                text-align: center; 
+            }
+            .header h1 { 
+                margin: 0 0 10px 0; 
+                font-size: 28px; 
+                font-weight: 700; 
+            }
+            .header p { 
+                margin: 0; 
+                font-size: 16px; 
+                opacity: 0.9; 
+            }
+            .content { 
+                padding: 40px 20px; 
+            }
+            .welcome-box { 
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); 
+                border-radius: 8px; 
+                padding: 30px; 
+                margin: 20px 0; 
+                text-align: center; 
+            }
+            .plan-badge { 
+                display: inline-block; 
+                background: #800020; 
+                color: white; 
+                padding: 8px 16px; 
+                border-radius: 20px; 
+                font-weight: bold; 
+                font-size: 14px; 
+                margin: 10px 0; 
+            }
+            .btn { 
+                display: inline-block; 
+                background: linear-gradient(135deg, #800020 0%, #a6002b 100%); 
+                color: white; 
+                padding: 16px 32px; 
+                text-decoration: none; 
+                border-radius: 6px; 
+                font-weight: bold; 
+                margin: 20px 0; 
+                box-shadow: 0 4px 6px rgba(128, 0, 32, 0.3);
+                transition: all 0.3s ease;
+            }
+            .features { 
+                margin: 30px 0; 
+            }
+            .feature { 
+                display: flex; 
+                align-items: center; 
+                margin: 15px 0; 
+                padding: 15px; 
+                background: #f8f9fa; 
+                border-radius: 6px; 
+            }
+            .feature-icon { 
+                width: 40px; 
+                height: 40px; 
+                background: #800020; 
+                border-radius: 50%; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                margin-right: 15px; 
+                font-size: 20px; 
+            }
+            .footer { 
+                background-color: #f8f9fa; 
+                padding: 30px 20px; 
+                text-align: center; 
+                font-size: 14px; 
+                color: #666; 
+            }
+            .social-links { 
+                margin: 20px 0; 
+            }
+            .social-links a { 
+                display: inline-block; 
+                margin: 0 10px; 
+                color: #800020; 
+                text-decoration: none; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🎉 Bienvenue sur MonitorPro !</h1>
+                <p>Votre compte a été créé avec succès</p>
+            </div>
+            
+            <div class="content">
+                <div class="welcome-box">
+                    <h2 style="color: #800020; margin-top: 0;">Bonjour ${firstName} !</h2>
+                    <p>Félicitations ! Votre compte MonitorPro pour <strong>${companyName}</strong> est maintenant actif.</p>
+                    <div class="plan-badge">${selectedPlan.toUpperCase()}</div>
+                    <p style="margin-bottom: 0;">Vous pouvez commencer à surveiller vos sites web dès maintenant !</p>
+                </div>
+
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="${loginUrl}" class="btn">🚀 Accéder à mon tableau de bord</a>
+                </div>
+
+                <div class="features">
+                    <h3 style="color: #800020;">Que pouvez-vous faire maintenant ?</h3>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">🌐</div>
+                        <div>
+                            <strong>Ajouter vos sites web</strong><br>
+                            Commencez par ajouter vos premiers sites à surveiller
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <div>
+                            <strong>Configuration automatique</strong><br>
+                            Le monitoring démarre automatiquement après ajout
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">📧</div>
+                        <div>
+                            <strong>Alertes instantanées</strong><br>
+                            Recevez des notifications en cas de panne détectée
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">👥</div>
+                        <div>
+                            <strong>Inviter votre équipe</strong><br>
+                            Ajoutez d'autres utilisateurs à votre compte
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #e8f5e8; border: 1px solid #4caf50; border-radius: 6px; padding: 20px; margin: 20px 0;">
+                    <h4 style="color: #2e7d32; margin-top: 0;">🎁 Essai gratuit de 14 jours</h4>
+                    <p style="margin-bottom: 0; color: #2e7d32;">
+                        Profitez de toutes les fonctionnalités sans limitation pendant votre période d'essai. 
+                        Aucune carte bancaire n'est requise.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p><strong>Besoin d'aide ?</strong></p>
+                <p>
+                    Consultez notre <a href="#" style="color: #800020;">documentation</a> ou 
+                    contactez-nous à <a href="mailto:support@monitorpro.com" style="color: #800020;">support@monitorpro.com</a>
+                </p>
+                
+                <div class="social-links">
+                    <a href="#">Twitter</a> | 
+                    <a href="#">LinkedIn</a> | 
+                    <a href="#">Documentation</a>
+                </div>
+                
+                <p style="font-size: 12px; color: #999; margin-top: 20px;">
+                    MonitorPro - Surveillance de sites web 24/7<br>
+                    Cet email a été envoyé automatiquement. Ne pas répondre à cette adresse.
+                </p>
+            </div>
+        </div>
+    </body>
+    </html>
+    `;
+  }
+
+  // Générer le contenu texte de l'email de bienvenue
+  generateWelcomeEmailText(welcomeData) {
+    const { firstName, companyName, loginUrl, selectedPlan } = welcomeData;
+
+    return `
+🎉 Bienvenue sur MonitorPro !
+
+Bonjour ${firstName},
+
+Félicitations ! Votre compte MonitorPro pour ${companyName} est maintenant actif.
+Plan sélectionné : ${selectedPlan.toUpperCase()}
+
+🚀 ACCÉDER À VOTRE TABLEAU DE BORD :
+${loginUrl}
+
+QUE POUVEZ-VOUS FAIRE MAINTENANT ?
+
+🌐 Ajouter vos sites web
+   Commencez par ajouter vos premiers sites à surveiller
+
+⚡ Configuration automatique  
+   Le monitoring démarre automatiquement après ajout
+
+📧 Alertes instantanées
+   Recevez des notifications en cas de panne détectée
+
+👥 Inviter votre équipe
+   Ajoutez d'autres utilisateurs à votre compte
+
+🎁 ESSAI GRATUIT DE 14 JOURS
+Profitez de toutes les fonctionnalités sans limitation pendant votre période d'essai.
+Aucune carte bancaire n'est requise.
+
+BESOIN D'AIDE ?
+- Documentation : https://docs.monitorpro.com
+- Support : support@monitorpro.com
+
+--
+MonitorPro - Surveillance de sites web 24/7
+Cet email a été envoyé automatiquement.
+    `;
+  }
+
+  // Envoyer un email d'alerte (fonction existante corrigée)
   async sendAlertEmail(recipientEmail, alertData) {
     if (!this.isConfigured) {
       logger.warn("Service email non configuré - alerte non envoyée");
@@ -78,11 +362,10 @@ class EmailService {
     }
   }
 
-  // Générer le contenu HTML de l'email d'alerte
+  // Générer le contenu HTML de l'email d'alerte (fonction existante)
   generateAlertEmailHTML(alertData) {
     const { site, status, timestamp } = alertData;
 
-    // Couleurs selon le statut
     const colors = {
       up: "#10B981",
       down: "#EF4444",
@@ -109,8 +392,7 @@ class EmailService {
             .details th, .details td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
             .details th { background-color: #f2f2f2; }
             .footer { background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 14px; color: #666; }
-            .status-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-weight: bold; color: white; background-color: ${statusColor}; }
-            .btn { display: inline-block; padding: 12px 24px; background-color: #3B82F6; color: white; text-decoration: none; border-radius: 4px; margin: 10px 0; }
+            .btn { display: inline-block; padding: 12px 24px; background-color: #800020; color: white; text-decoration: none; border-radius: 4px; margin: 10px 0; }
         </style>
     </head>
     <body>
@@ -131,45 +413,41 @@ class EmailService {
                         ? `<p><strong>Client:</strong> ${site.client}</p>`
                         : ""
                     }
-                    <p><strong>Statut:</strong> <span class="status-badge">${
-                      status.text
-                    }</span></p>
                 </div>
 
                 <div class="details">
-                    <h3>Détails de la vérification</h3>
+                    <h3>Détails de l'incident</h3>
                     <table>
                         <tr>
-                            <th>Heure de vérification</th>
+                            <th>Statut</th>
+                            <td>${status.text}</td>
+                        </tr>
+                        <tr>
+                            <th>Code de réponse</th>
+                            <td>${status.code || "N/A"}</td>
+                        </tr>
+                        <tr>
+                            <th>Temps de réponse</th>
+                            <td>${
+                              status.responseTime
+                                ? status.responseTime + "ms"
+                                : "N/A"
+                            }</td>
+                        </tr>
+                        <tr>
+                            <th>Timestamp</th>
                             <td>${new Date(timestamp).toLocaleString(
                               "fr-FR"
                             )}</td>
                         </tr>
                         ${
-                          status.code
-                            ? `
-                        <tr>
-                            <th>Code de réponse</th>
-                            <td>${status.code}</td>
-                        </tr>`
-                            : ""
-                        }
-                        ${
-                          status.responseTime
-                            ? `
-                        <tr>
-                            <th>Temps de réponse</th>
-                            <td>${status.responseTime}ms</td>
-                        </tr>`
-                            : ""
-                        }
-                        ${
                           status.error
                             ? `
                         <tr>
                             <th>Erreur</th>
-                            <td style="color: #EF4444;">${status.error}</td>
-                        </tr>`
+                            <td>${status.error}</td>
+                        </tr>
+                        `
                             : ""
                         }
                     </table>
@@ -178,30 +456,19 @@ class EmailService {
                 ${
                   alertData.dashboardUrl
                     ? `
-                <div style="text-align: center; margin: 30px 0;">
+                <div style="text-align: center; margin: 20px 0;">
                     <a href="${alertData.dashboardUrl}" class="btn">Voir le Dashboard</a>
-                </div>`
+                </div>
+                `
                     : ""
                 }
-
-                <div style="background-color: #FEF3C7; border: 1px solid #F59E0B; border-radius: 4px; padding: 15px; margin: 20px 0;">
-                    <p style="margin: 0;"><strong>Action recommandée:</strong></p>
-                    <p style="margin: 5px 0;">
-                        ${
-                          status.code === "down"
-                            ? "Vérifiez immédiatement l'état du serveur et des services."
-                            : status.code === "warning"
-                            ? "Surveillez le site de près et vérifiez les logs si disponibles."
-                            : "Le site est de nouveau opérationnel. Continuez la surveillance."
-                        }
-                    </p>
-                </div>
             </div>
-
+            
             <div class="footer">
                 <p>Cet email a été envoyé automatiquement par MonitorPro.</p>
-                <p>Pour modifier vos préférences de notification, connectez-vous à votre dashboard.</p>
-                <p style="font-size: 12px; color: #999;">© 2024 MonitorPro - Système de surveillance de sites web</p>
+                <p>Surveillez vos sites web 24/7 - <a href="${
+                  alertData.dashboardUrl || "#"
+                }">monitorpro.com</a></p>
             </div>
         </div>
     </body>
@@ -209,224 +476,54 @@ class EmailService {
     `;
   }
 
-  // Générer le contenu texte de l'email d'alerte
+  // Générer le contenu texte de l'email d'alerte (fonction existante)
   generateAlertEmailText(alertData) {
     const { site, status, timestamp } = alertData;
 
-    let text = `MonitorPro - Alerte\n`;
-    text += `========================\n\n`;
+    let text = `ALERTE MONITORPRO\n\n`;
     text += `${status.icon} ${status.text}\n\n`;
     text += `Site: ${site.name}\n`;
     text += `URL: ${site.url}\n`;
-    if (site.client) text += `Client: ${site.client}\n`;
-    text += `Statut: ${status.text}\n`;
-    text += `Heure: ${new Date(timestamp).toLocaleString("fr-FR")}\n\n`;
 
-    if (status.code) text += `Code de réponse: ${status.code}\n`;
-    if (status.responseTime)
-      text += `Temps de réponse: ${status.responseTime}ms\n`;
-    if (status.error) text += `Erreur: ${status.error}\n`;
+    if (site.client) {
+      text += `Client: ${site.client}\n`;
+    }
 
-    text += `\nAction recommandée:\n`;
-    if (status.code === "down") {
-      text += `Vérifiez immédiatement l'état du serveur et des services.\n`;
-    } else if (status.code === "warning") {
-      text += `Surveillez le site de près et vérifiez les logs si disponibles.\n`;
-    } else {
-      text += `Le site est de nouveau opérationnel. Continuez la surveillance.\n`;
+    text += `\nDÉTAILS:\n`;
+    text += `- Code de réponse: ${status.code || "N/A"}\n`;
+    text += `- Temps de réponse: ${
+      status.responseTime ? status.responseTime + "ms" : "N/A"
+    }\n`;
+    text += `- Timestamp: ${new Date(timestamp).toLocaleString("fr-FR")}\n`;
+
+    if (status.error) {
+      text += `- Erreur: ${status.error}\n`;
     }
 
     if (alertData.dashboardUrl) {
       text += `\nDashboard: ${alertData.dashboardUrl}\n`;
     }
 
-    text += `\n--\n`;
-    text += `Cet email a été envoyé automatiquement par MonitorPro.\n`;
-
+    text += `\n--\nCet email a été envoyé automatiquement par MonitorPro.\n`;
     return text;
   }
 
-  // Envoyer un rapport par email
-  async sendReportEmail(recipientEmail, reportData) {
-    if (!this.isConfigured) {
-      logger.warn("Service email non configuré - rapport non envoyé");
-      return false;
-    }
-
-    try {
-      const htmlContent = this.generateReportEmailHTML(reportData);
-      const textContent = this.generateReportEmailText(reportData);
-
-      const mailOptions = {
-        from: `"MonitorPro" <${
-          process.env.SMTP_FROM || process.env.SMTP_USER
-        }>`,
-        to: recipientEmail,
-        subject: `Rapport MonitorPro - ${reportData.period}`,
-        text: textContent,
-        html: htmlContent,
-      };
-
-      const result = await this.transporter.sendMail(mailOptions);
-      logger.info(`Rapport envoyé à ${recipientEmail} (${result.messageId})`);
-      return true;
-    } catch (error) {
-      logger.error(
-        `Erreur lors de l'envoi du rapport à ${recipientEmail}:`,
-        error
-      );
-      return false;
-    }
-  }
-
-  // Générer le contenu HTML du rapport
-  generateReportEmailHTML(reportData) {
-    const { period, sites, summary } = reportData;
-
-    return `
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rapport MonitorPro</title>
-        <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
-            .container { max-width: 700px; margin: 0 auto; background-color: #ffffff; }
-            .header { background-color: #3B82F6; color: white; padding: 20px; text-align: center; }
-            .content { padding: 20px; }
-            .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
-            .stat-card { background-color: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; border-left: 4px solid #3B82F6; }
-            .stat-number { font-size: 24px; font-weight: bold; color: #3B82F6; }
-            .sites-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-            .sites-table th, .sites-table td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-            .sites-table th { background-color: #f2f2f2; font-weight: bold; }
-            .status-good { color: #10B981; font-weight: bold; }
-            .status-warning { color: #F59E0B; font-weight: bold; }
-            .status-bad { color: #EF4444; font-weight: bold; }
-            .footer { background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 14px; color: #666; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>📊 Rapport MonitorPro</h1>
-                <p style="margin: 0;">Période: ${period}</p>
-            </div>
-            
-            <div class="content">
-                <div class="summary">
-                    <div class="stat-card">
-                        <div class="stat-number">${summary.totalSites}</div>
-                        <div>Sites surveillés</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">${summary.totalChecks}</div>
-                        <div>Vérifications</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">${summary.avgUptime}%</div>
-                        <div>Disponibilité moyenne</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">${summary.totalIncidents}</div>
-                        <div>Incidents</div>
-                    </div>
-                </div>
-
-                <h2>Détail par site</h2>
-                <table class="sites-table">
-                    <thead>
-                        <tr>
-                            <th>Site</th>
-                            <th>Disponibilité</th>
-                            <th>Temps de réponse</th>
-                            <th>Incidents</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${sites
-                          .map(
-                            (site) => `
-                        <tr>
-                            <td>
-                                <strong>${site.name}</strong><br>
-                                <small>${site.url}</small>
-                            </td>
-                            <td class="${
-                              site.uptime >= 99
-                                ? "status-good"
-                                : site.uptime >= 95
-                                ? "status-warning"
-                                : "status-bad"
-                            }">
-                                ${site.uptime}%
-                            </td>
-                            <td>${site.avgResponseTime}ms</td>
-                            <td>${site.incidents}</td>
-                        </tr>
-                        `
-                          )
-                          .join("")}
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="footer">
-                <p>Rapport généré automatiquement le ${new Date().toLocaleString(
-                  "fr-FR"
-                )}</p>
-                <p>© 2024 MonitorPro - Système de surveillance de sites web</p>
-            </div>
-        </div>
-    </body>
-    </html>
-    `;
-  }
-
-  // Générer le contenu texte du rapport
-  generateReportEmailText(reportData) {
-    const { period, sites, summary } = reportData;
-
-    let text = `MonitorPro - Rapport ${period}\n`;
-    text += `===============================\n\n`;
-    text += `Résumé:\n`;
-    text += `- Sites surveillés: ${summary.totalSites}\n`;
-    text += `- Vérifications: ${summary.totalChecks}\n`;
-    text += `- Disponibilité moyenne: ${summary.avgUptime}%\n`;
-    text += `- Incidents: ${summary.totalIncidents}\n\n`;
-
-    text += `Détail par site:\n`;
-    text += `----------------\n`;
-
-    sites.forEach((site) => {
-      text += `${site.name} (${site.url})\n`;
-      text += `  Disponibilité: ${site.uptime}%\n`;
-      text += `  Temps de réponse: ${site.avgResponseTime}ms\n`;
-      text += `  Incidents: ${site.incidents}\n\n`;
-    });
-
-    text += `--\n`;
-    text += `Rapport généré le ${new Date().toLocaleString("fr-FR")}\n`;
-    text += `MonitorPro - Système de surveillance de sites web\n`;
-
-    return text;
-  }
-
-  // Tester la configuration email
-  async testEmailConfiguration(testEmail) {
+  // Envoyer un email de test
+  async sendTestEmail(testEmail) {
     if (!this.isConfigured) {
       throw new Error("Service email non configuré");
     }
 
     try {
       const testMailOptions = {
-        from: `"MonitorPro" <${
+        from: `"MonitorPro Test" <${
           process.env.SMTP_FROM || process.env.SMTP_USER
         }>`,
         to: testEmail,
         subject: "Test de configuration MonitorPro",
-        text: "Ceci est un test de configuration du service email MonitorPro.",
+        text: `Test de configuration MonitorPro\n\nSi vous recevez cet email, la configuration SMTP fonctionne correctement.\nDate: ${new Date().toLocaleString(
+          "fr-FR"
+        )}`,
         html: `
         <h2>Test de configuration MonitorPro</h2>
         <p>Si vous recevez cet email, la configuration SMTP fonctionne correctement.</p>

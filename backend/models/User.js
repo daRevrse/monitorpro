@@ -54,6 +54,17 @@ const User = sequelize.define(
       type: DataTypes.DATE,
       allowNull: true,
     },
+    preferences: {
+      type: DataTypes.JSON,
+      allowNull: true,
+      defaultValue: {
+        email_notifications: true,
+        sms_notifications: false,
+        slack_notifications: false,
+        language: "fr",
+        timezone: "Europe/Paris",
+      },
+    },
   },
   {
     tableName: "users",
@@ -73,6 +84,29 @@ User.prototype.getFullName = function () {
 // Méthodes de classe
 User.hashPassword = async function (password) {
   return bcrypt.hash(password, 12);
+};
+
+// Ajouter une méthode pour récupérer les préférences avec valeurs par défaut
+User.prototype.getPreferences = function () {
+  const defaultPrefs = {
+    email_notifications: true,
+    sms_notifications: false,
+    slack_notifications: false,
+    language: "fr",
+    timezone: "Europe/Paris",
+  };
+
+  return this.preferences
+    ? { ...defaultPrefs, ...this.preferences }
+    : defaultPrefs;
+};
+
+// Ajouter une méthode pour mettre à jour les préférences
+User.prototype.updatePreferences = function (newPreferences) {
+  const currentPrefs = this.getPreferences();
+  const updatedPrefs = { ...currentPrefs, ...newPreferences };
+
+  return this.update({ preferences: updatedPrefs });
 };
 
 module.exports = User;
