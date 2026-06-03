@@ -366,8 +366,8 @@ router.get("/users", authenticateToken, async (req, res) => {
       });
     }
 
-    // Si admin global, voir tous les utilisateurs, sinon seulement ceux de sa company
-    const whereClause = company_id ? { company_id } : {};
+    // Mono-tenant : tous les utilisateurs sont visibles
+    const whereClause = {};
 
     const users = await User.findAll({
       where: whereClause,
@@ -440,10 +440,8 @@ router.put(
         });
       }
 
-      // Trouver l'utilisateur à modifier
-      const whereClause = userCompanyId
-        ? { id, company_id: userCompanyId }
-        : { id };
+      // Mono-tenant : recherche par identifiant uniquement
+      const whereClause = { id };
       const user = await User.findOne({ where: whereClause });
 
       if (!user) {
@@ -516,10 +514,8 @@ router.delete("/users/:id", authenticateToken, async (req, res) => {
       });
     }
 
-    // Trouver l'utilisateur à supprimer
-    const whereClause = userCompanyId
-      ? { id, company_id: userCompanyId }
-      : { id };
+    // Mono-tenant : recherche par identifiant uniquement
+    const whereClause = { id };
     const user = await User.findOne({ where: whereClause });
 
     if (!user) {

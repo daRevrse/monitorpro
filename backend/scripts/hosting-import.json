@@ -1,0 +1,507 @@
+[
+  {
+    "account": "BOSTONSOLUX_",
+    "sites": [
+      {
+        "name": "BostonSolux",
+        "url": "BostonSolux.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "BostonSolux Education",
+        "url": "Bostonsoluxedu.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "Agri Solux",
+        "url": "agrisolux.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "RDOTSEGROUP",
+    "sites": [
+      {
+        "name": "www.acr-sa.com",
+        "url": "www.acr-sa.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.bostonsoluxsecurity.com",
+        "url": "www.bostonsoluxsecurity.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.digitalcom.online",
+        "url": "www.digitalcom.online",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.energysolux.com",
+        "url": "www.energysolux.com",
+        "etat": ""
+      },
+      {
+        "name": "www.feliciamatty.com",
+        "url": "www.feliciamatty.com",
+        "etat": ""
+      },
+      {
+        "name": "www.groupesolux.com",
+        "url": "www.groupesolux.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.gold-voyages.com",
+        "url": "www.gold-voyages.com",
+        "etat": "DESACTIVÉ"
+      },
+      {
+        "name": "www.llctogo.com",
+        "url": "www.llctogo.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.pharmaciehorizon.com",
+        "url": "www.pharmaciehorizon.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.pharmacielaflammedamour.com",
+        "url": "www.pharmacielaflammedamour.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.sdege-sa.com",
+        "url": "www.sdege-sa.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.trocadero-ac.com",
+        "url": "www.trocadero-ac.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.tchadbiz.com",
+        "url": "www.tchadbiz.com",
+        "etat": ""
+      },
+      {
+        "name": "www.lyceedekpodzi.com",
+        "url": "www.lyceedekpodzi.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.lyceedekpodzi.com",
+        "url": "www.lyceedekpodzi.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "GDCTOGO",
+    "sites": [
+      {
+        "name": "www.afrikars.com",
+        "url": "www.afrikars.com",
+        "etat": "DESACTIVÉ"
+      },
+      {
+        "name": "www.aron-togo.org",
+        "url": "www.aron-togo.org",
+        "etat": "DESACTIVÉ"
+      },
+      {
+        "name": "www.damjunior.com",
+        "url": "www.damjunior.com",
+        "etat": "DESACTIVÉ"
+      },
+      {
+        "name": "www.gdctogo.com",
+        "url": "www.gdctogo.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.mikayladotse.com",
+        "url": "www.mikayladotse.com",
+        "etat": "DESACTIVÉ"
+      },
+      {
+        "name": "www.mla-ge.com",
+        "url": "www.mla-ge.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.pharmaciedekodjoviakope.com",
+        "url": "www.pharmaciedekodjoviakope.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.prolabodiagnostics.com",
+        "url": "www.prolabodiagnostics.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.sodexca.com",
+        "url": "www.sodexca.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.ymge-sl.com",
+        "url": "www.ymge-sl.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "itil-africa.com",
+        "url": "www.itil-africa.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "MMIE",
+    "sites": [
+      {
+        "name": "www.bpartners-avocats.com",
+        "url": "www.bpartners-avocats.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.centramedge.com",
+        "url": "www.centramedge.com",
+        "etat": "DESACTIVÉ"
+      },
+      {
+        "name": "www.mmh-ge.com",
+        "url": "www.mmh-ge.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.mmie.gob.gq",
+        "url": "www.mmie.gob.gq",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.mtfess.gob.gq",
+        "url": "www.mtfess.gob.gq",
+        "etat": "LIVE"
+      },
+      {
+        "name": "mtfessge.com",
+        "url": "mtfessge.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "alumnifaseg30.com",
+        "url": "alumnifaseg30.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "CABINET-NJ",
+    "sites": [
+      {
+        "name": "www.cabinet-nj.com",
+        "url": "www.cabinet-nj.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "www.mcilerocher.org",
+        "url": "www.mcilerocher.org",
+        "etat": "LIVE"
+      },
+      {
+        "name": "bostonsoluxlab.com",
+        "url": "bostonsoluxlab.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "spear2lead.com",
+        "url": "spear2lead.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "cabinetthomas-td.com",
+        "url": "cabinetthomas-td.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "suzwal.com",
+        "url": "suzwal.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "mnf-tchad.org",
+        "url": "mnf-tchad.org",
+        "etat": "LIVE"
+      },
+      {
+        "name": "theresenadingar.com",
+        "url": "theresenadingar.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "mba-rh.com",
+        "url": "mba-rh.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "cfk-avocats.com",
+        "url": "cfk-avocats.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "cabinetlaurinda.com",
+        "url": "cabinetlaurinda.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "celileamegadjin.com",
+        "url": "celileamegadjin.com",
+        "etat": ""
+      },
+      {
+        "name": "mabuenavista.com",
+        "url": "mabuenavista.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "rehabsolux.com",
+        "url": "rehabsolux.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "SOLUXWORKPLACE",
+    "sites": [
+      {
+        "name": "linksbusiness.net",
+        "url": "linksbusiness.net",
+        "etat": "LIVE"
+      },
+      {
+        "name": "gnon-konde.com",
+        "url": "gnon-konde.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "cabinetgoilar-td.com",
+        "url": "cabinetgoilar-td.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "rozydesign.com",
+        "url": "rozydesign.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "soluxworkplace.com",
+        "url": "soluxworkplace.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "charlotteakotiamensah.com",
+        "url": "charlotteakotiamensah.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "charlesameganvie.com",
+        "url": "charlesameganvie.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "dorikko.com",
+        "url": "dorikko.com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "victorhabinshuti.Com",
+        "url": "victorhabinshuti.Com",
+        "etat": "LIVE"
+      },
+      {
+        "name": "yvonneaffambi.org",
+        "url": "yvonneaffambi.org",
+        "etat": ""
+      },
+      {
+        "name": "aziadouquist.com",
+        "url": "aziadouquist.com",
+        "etat": ""
+      }
+    ]
+  },
+  {
+    "account": "sisaaptchad",
+    "sites": [
+      {
+        "name": "sisaaptchad.org",
+        "url": "sisaaptchad.org",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "ESICO BTP",
+    "sites": [
+      {
+        "name": "esicobtp-td.com",
+        "url": "esicobtp-td.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "TOGOMINES",
+    "sites": [
+      {
+        "name": "togo-mines.com",
+        "url": "togo-mines.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "JUSTDROIT",
+    "sites": [
+      {
+        "name": "www.justdroit.org",
+        "url": "www.justdroit.org",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "leviragefashion",
+    "sites": [
+      {
+        "name": "leviragefashion.com",
+        "url": "leviragefashion.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "ODEFTG",
+    "sites": [
+      {
+        "name": "odeftg.com",
+        "url": "odeftg.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "callvroom",
+    "sites": [
+      {
+        "name": "callvroom.com",
+        "url": "callvroom.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "hcrrun-tg",
+    "sites": [
+      {
+        "name": "hcrrun-tg.org",
+        "url": "hcrrun-tg.org",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "lastarnationalesa",
+    "sites": [
+      {
+        "name": "lastarnationalesa.com",
+        "url": "lastarnationalesa.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "AFFORD TOGO",
+    "sites": [
+      {
+        "name": "affordtogo.com",
+        "url": "affordtogo.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "caderdt",
+    "sites": [
+      {
+        "name": "caderdt.com",
+        "url": "caderdt.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "dreamafrica",
+    "sites": [
+      {
+        "name": "dreamafrica.africa",
+        "url": "dreamafrica.africa",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "agricom-tchad",
+    "sites": [
+      {
+        "name": "agricom-tchad.com",
+        "url": "agricom-tchad.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "aeroservice-TG",
+    "sites": [
+      {
+        "name": "aeroservice-togo.com",
+        "url": "aeroservice-togo.com",
+        "etat": "GERE PAR AEROSERVICE-LIVE"
+      }
+    ]
+  },
+  {
+    "account": "cais-tchad",
+    "sites": [
+      {
+        "name": "cais-tchad.com",
+        "url": "cais-tchad.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "aplushealthsolutions.com",
+    "sites": [
+      {
+        "name": "www.aplushealthsolutions.com",
+        "url": "www.aplushealthsolutions.com",
+        "etat": "LIVE"
+      }
+    ]
+  },
+  {
+    "account": "ADAC",
+    "sites": [
+      {
+        "name": "ADAC",
+        "url": "ADAC",
+        "etat": "LIVE"
+      }
+    ]
+  }
+]

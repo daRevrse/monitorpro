@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
   Search,
-  Filter,
   AlertTriangle,
   CheckCircle,
   XCircle,
@@ -9,7 +8,6 @@ import {
   Wifi,
   WifiOff,
   Settings,
-  Plus,
   RefreshCw,
 } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
@@ -105,7 +103,7 @@ const Dashboard = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-full">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div>
+        <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-bordeaux-600"></div>
       </div>
     );
   }
@@ -130,7 +128,7 @@ const Dashboard = () => {
               <p className="text-sm font-medium text-gray-600">Total Sites</p>
               <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
             </div>
-            <Wifi className="w-8 h-8 text-blue-500" />
+            <Wifi className="w-8 h-8 text-bordeaux-500" />
           </div>
         </div>
 
@@ -176,7 +174,7 @@ const Dashboard = () => {
               <input
                 type="text"
                 placeholder="Rechercher un site..."
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent w-64"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux-500 focus:border-transparent w-64"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -184,7 +182,7 @@ const Dashboard = () => {
 
             <select
               className="px-4 py-2 rounded-lg border border-gray-200 bg-white text-gray-700 shadow-sm 
-             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+             focus:outline-none focus:ring-2 focus:ring-bordeaux-500 focus:border-bordeaux-500
              transition duration-200 ease-in-out cursor-pointer hover:border-gray-400"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
@@ -219,8 +217,8 @@ const Dashboard = () => {
               onClick={() => setViewMode("list")}
               className={`px-4 py-2 rounded-lg transition-colors ${
                 viewMode === "list"
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  ? "bg-bordeaux-600 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-bordeaux-50 hover:text-bordeaux-700"
               }`}
             >
               Liste
@@ -325,7 +323,7 @@ const Dashboard = () => {
                         href={site.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-blue-600"
+                        className="hover:text-bordeaux-600"
                       >
                         {site.url}
                       </a>
@@ -349,7 +347,7 @@ const Dashboard = () => {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       <button
                         onClick={() => forceCheck(site.id)}
-                        className="text-blue-600 hover:text-blue-800"
+                        className="text-bordeaux-600 hover:text-bordeaux-800"
                       >
                         Vérifier
                       </button>

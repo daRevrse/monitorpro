@@ -33,6 +33,46 @@ const Website = sequelize.define(
       type: DataTypes.STRING(255),
       allowNull: true,
     },
+    hosting_account_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "hosting_accounts",
+        key: "id",
+      },
+    },
+    site_type: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+    },
+    hosting_provider: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+    },
+    hosting_account: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+    },
+    hosting_panel_url: {
+      type: DataTypes.STRING(500),
+      allowNull: true,
+    },
+    hosting_account_email: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+    },
+    hosting_expires_at: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    server_ip: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+    },
+    notes: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
     check_interval: {
       type: DataTypes.INTEGER,
       defaultValue: 300, // 5 minutes

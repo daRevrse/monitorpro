@@ -6,30 +6,43 @@ class EmailService {
   constructor() {
     this.transporter = null;
     this.isConfigured = false;
+    this.fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER || null;
     this.init();
   }
 
-  // Initialiser le service email
+  // Initialiser le service email depuis les variables d'environnement
   init() {
+    this.configure({
+      host: process.env.SMTP_HOST || "localhost",
+      port: parseInt(process.env.SMTP_PORT) || 587,
+      secure: process.env.SMTP_SECURE === "true",
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+      from: this.fromAddress,
+    });
+  }
+
+  // (Re)configurer le service email avec une config dynamique (DB ou env)
+  configure(cfg = {}) {
     try {
-      // Configuration SMTP
-      const smtpConfig = {
-        host: process.env.SMTP_HOST || "localhost",
-        port: parseInt(process.env.SMTP_PORT) || 587,
-        secure: process.env.SMTP_SECURE === "true", // true pour 465, false pour autres ports
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        },
-      };
+      if (cfg.from) this.fromAddress = cfg.from;
 
-      // ✅ CORRECTION: createTransport (pas createTransporter)
-      this.transporter = nodemailer.createTransport(smtpConfig);
+      if (!cfg.host || !cfg.user) {
+        this.isConfigured = false;
+        logger.warn("Service email non configuré (host/user manquants)");
+        return;
+      }
 
-      // Vérifier la configuration
-      this.transporter.verify((error, success) => {
+      this.transporter = nodemailer.createTransport({
+        host: cfg.host,
+        port: parseInt(cfg.port) || 587,
+        secure: !!cfg.secure,
+        auth: { user: cfg.user, pass: cfg.pass },
+      });
+
+      this.transporter.verify((error) => {
         if (error) {
-          logger.error("Configuration SMTP invalide:", error);
+          logger.error("Configuration SMTP invalide:", error.message);
           this.isConfigured = false;
         } else {
           logger.info("Service email configuré avec succès");
@@ -40,6 +53,19 @@ class EmailService {
       logger.error("Erreur lors de l'initialisation du service email:", error);
       this.isConfigured = false;
     }
+  }
+
+  // Reconfigurer depuis l'objet settings (table app_settings)
+  configureFromSettings(s) {
+    if (!s) return;
+    this.configure({
+      host: s.smtp_host,
+      port: s.smtp_port,
+      secure: s.smtp_secure,
+      user: s.smtp_user,
+      pass: s.smtp_pass,
+      from: s.smtp_from || s.smtp_user,
+    });
   }
 
   // ✅ NOUVELLE FONCTION: Email de bienvenue
@@ -57,7 +83,7 @@ class EmailService {
 
       const mailOptions = {
         from: `"MonitorPro" <${
-          process.env.SMTP_FROM || process.env.SMTP_USER
+          this.fromAddress || process.env.SMTP_USER
         }>`,
         to: recipientEmail,
         subject: `🎉 Bienvenue sur MonitorPro, ${welcomeData.firstName} !`,
@@ -339,7 +365,7 @@ Cet email a été envoyé automatiquement.
 
       const mailOptions = {
         from: `"MonitorPro" <${
-          process.env.SMTP_FROM || process.env.SMTP_USER
+          this.fromAddress || process.env.SMTP_USER
         }>`,
         to: recipientEmail,
         subject: alertData.subject,
@@ -517,7 +543,7 @@ Cet email a été envoyé automatiquement.
     try {
       const testMailOptions = {
         from: `"MonitorPro Test" <${
-          process.env.SMTP_FROM || process.env.SMTP_USER
+          this.fromAddress || process.env.SMTP_USER
         }>`,
         to: testEmail,
         subject: "Test de configuration MonitorPro",

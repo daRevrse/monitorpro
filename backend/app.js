@@ -16,7 +16,15 @@ const authRoutes = require("./routes/auth");
 const websiteRoutes = require("./routes/websites");
 const monitoringRoutes = require("./routes/monitoring");
 const incidentRoutes = require("./routes/incidents");
+const interventionRoutes = require("./routes/interventions");
+const hostingAccountRoutes = require("./routes/hostingAccounts");
+const settingsRoutes = require("./routes/settings");
+const reportRoutes = require("./routes/reports");
 const publicRoutes = require("./routes/public");
+
+// Services
+const settingsService = require("./services/settingsService");
+const emailService = require("./services/emailService");
 
 // Services et Jobs
 const monitorCron = require("./jobs/monitorCron");
@@ -176,6 +184,10 @@ class MonitorProApp {
     this.app.use("/api/websites", websiteRoutes);
     this.app.use("/api/monitoring", monitoringRoutes);
     this.app.use("/api/incidents", incidentRoutes);
+    this.app.use("/api/interventions", interventionRoutes);
+    this.app.use("/api/hosting-accounts", hostingAccountRoutes);
+    this.app.use("/api/settings", settingsRoutes);
+    this.app.use("/api/reports", reportRoutes);
 
     // Route pour les statistiques système (admin seulement)
     this.app.get("/api/system/stats", authenticateToken, (req, res) => {
@@ -228,6 +240,15 @@ class MonitorProApp {
 
       await sequelize.authenticate();
       logger.success("Connexion à la base de données établie");
+
+      // Charger la configuration applicative + (re)configurer l'email
+      try {
+        const settings = await settingsService.load();
+        emailService.configureFromSettings(settings);
+        logger.info("Paramètres applicatifs chargés");
+      } catch (e) {
+        logger.warn("Paramètres applicatifs non chargés:", e.message);
+      }
 
       // Synchroniser les modèles en développement
       if (process.env.NODE_ENV === "development") {

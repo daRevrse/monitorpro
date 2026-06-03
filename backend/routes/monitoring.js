@@ -2,7 +2,14 @@
 const express = require("express");
 const { Op } = require("sequelize");
 const { body, query, validationResult } = require("express-validator");
-const { Website, WebsiteCheck, Incident, Company } = require("../models");
+const {
+  Website,
+  WebsiteCheck,
+  Incident,
+  Intervention,
+  User,
+  Company,
+} = require("../models");
 const { authenticateToken, requireRole } = require("../middleware/auth");
 const monitorService = require("../services/monitorService");
 const alertService = require("../services/alertService");
@@ -18,7 +25,7 @@ router.get("/dashboard", async (req, res) => {
   try {
     const { company_id, role } = req.user;
 
-    const whereClause = role === "admin" && !company_id ? {} : { company_id };
+    const whereClause = {};
 
     const sites = await Website.findAll({
       where: { ...whereClause, is_active: true },
@@ -143,11 +150,11 @@ router.get("/sites/:id", async (req, res) => {
     const { id } = req.params;
     const { company_id, role } = req.user;
 
-    const whereClause = role === "admin" && !company_id ? {} : { company_id };
+    const whereClause = {};
 
     const site = await Website.findOne({
       where: { id, ...whereClause },
-      include: ["company"],
+      include: ["company", "hostingAccount"],
     });
 
     if (!site) {
@@ -177,6 +184,44 @@ router.get("/sites/:id", async (req, res) => {
       limit: 10,
     });
 
+    // Dernier check disposant d'infos SSL
+    const latestSslCheck = checks.find((c) => c.ssl_expires_at) || null;
+
+    // Interventions (active + historique)
+    const interventions = await Intervention.findAll({
+      where: { website_id: site.id },
+      include: [{ model: User, as: "technician" }],
+      order: [["started_at", "DESC"]],
+      limit: 20,
+    });
+
+    const serializeIntervention = (intervention) => {
+      const started = intervention.started_at
+        ? new Date(intervention.started_at)
+        : null;
+      const ended = intervention.ended_at
+        ? new Date(intervention.ended_at)
+        : null;
+      return {
+        id: intervention.id,
+        title: intervention.title,
+        description: intervention.description,
+        intervention_type: intervention.intervention_type,
+        resolution: intervention.resolution,
+        state: intervention.state,
+        started_at: intervention.started_at,
+        ended_at: intervention.ended_at,
+        duration_seconds:
+          started && ended ? Math.round((ended - started) / 1000) : null,
+        technician: intervention.technician
+          ? intervention.technician.getFullName()
+          : null,
+      };
+    };
+
+    const activeIntervention =
+      interventions.find((i) => i.state === "in_progress") || null;
+
     res.json({
       success: true,
       data: {
@@ -185,17 +230,39 @@ router.get("/sites/:id", async (req, res) => {
           name: site.name,
           url: site.url,
           client_name: site.client_name,
+          hosting_account: site.hostingAccount
+            ? {
+                id: site.hostingAccount.id,
+                name: site.hostingAccount.name,
+                provider: site.hostingAccount.provider,
+                login: site.hostingAccount.login,
+                panel_url: site.hostingAccount.panel_url,
+                account_email: site.hostingAccount.account_email,
+                expires_at: site.hostingAccount.expires_at,
+              }
+            : null,
+          site_type: site.site_type,
+          hosting_provider: site.hosting_provider,
+          hosting_panel_url: site.hosting_panel_url,
+          hosting_account_email: site.hosting_account_email,
+          hosting_expires_at: site.hosting_expires_at,
+          server_ip: site.server_ip,
+          notes: site.notes,
           status: site.status,
           check_interval: site.check_interval,
           timeout_threshold: site.timeout_threshold,
           ssl_check: site.ssl_check,
+          is_active: site.is_active,
           company: site.company ? site.company.name : null,
+          created_at: site.created_at,
         },
         stats: {
           uptime: parseFloat(uptime.toFixed(2)),
           avg_response_time: Math.round(avgResponseTime),
           total_checks_24h: checks.length,
           up_checks_24h: upChecks.length,
+          ssl_valid: latestSslCheck ? latestSslCheck.ssl_valid : null,
+          ssl_expires_at: latestSslCheck ? latestSslCheck.ssl_expires_at : null,
         },
         recent_checks: checks.slice(0, 20).map((check) => ({
           id: check.id,
@@ -203,6 +270,8 @@ router.get("/sites/:id", async (req, res) => {
           status_code: check.status_code,
           response_time: check.response_time,
           error_message: check.error_message,
+          ssl_valid: check.ssl_valid,
+          ssl_expires_at: check.ssl_expires_at,
           checked_at: check.checked_at,
         })),
         incidents: incidents.map((incident) => ({
@@ -213,6 +282,10 @@ router.get("/sites/:id", async (req, res) => {
           started_at: incident.started_at,
           resolved_at: incident.resolved_at,
         })),
+        active_intervention: activeIntervention
+          ? serializeIntervention(activeIntervention)
+          : null,
+        interventions: interventions.map(serializeIntervention),
       },
     });
   } catch (error) {
@@ -232,11 +305,11 @@ router.post("/sites/:id/check", async (req, res) => {
     const { id } = req.params;
     const { company_id, role } = req.user;
 
-    const whereClause = role === "admin" && !company_id ? {} : { company_id };
+    const whereClause = {};
 
     const site = await Website.findOne({
       where: { id, ...whereClause },
-      include: ["company"],
+      include: ["company", "hostingAccount"],
     });
 
     if (!site) {
@@ -280,7 +353,7 @@ router.get(
 
       const { company_id, role } = req.user;
       const { status, severity, limit = 20, offset = 0 } = req.query;
-      const whereClause = role === "admin" && !company_id ? {} : { company_id };
+      const whereClause = {};
 
       const incidentWhere = {};
       if (status) incidentWhere.status = status;
@@ -357,7 +430,7 @@ router.put(
       const { id } = req.params;
       const { status, description } = req.body;
       const { company_id, role } = req.user;
-      const whereClause = role === "admin" && !company_id ? {} : { company_id };
+      const whereClause = {};
 
       const incident = await Incident.findOne({
         where: { id },
@@ -412,7 +485,7 @@ router.get(
     try {
       const { company_id, role } = req.user;
       const { period = "24h", site_id } = req.query;
-      const whereClause = role === "admin" && !company_id ? {} : { company_id };
+      const whereClause = {};
 
       const periods = {
         "1h": 60 * 60 * 1000,

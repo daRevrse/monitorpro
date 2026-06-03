@@ -1,37 +1,72 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { useMonitoring } from "../contexts/MonitoringContext";
 import { Logo } from "./../assets/logo";
 import {
   Home,
   Monitor,
-  Users,
+  Server,
+  Wrench,
   BarChart3,
+  Settings as SettingsIcon,
   Bell,
   User,
   LogOut,
   Menu,
   X,
   ChevronDown,
+  AlertTriangle,
+  CheckCircle,
 } from "lucide-react";
 
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
   const { user, logout } = useAuth();
+  const { incidents } = useMonitoring();
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Incidents non résolus = notifications actives
+  const activeIncidents = (incidents || []).filter(
+    (incident) => incident.status !== "resolved"
+  );
+  const notificationCount = activeIncidents.length;
+
+  const formatIncidentDate = (date) => {
+    if (!date) return "";
+    return new Date(date).toLocaleString("fr-FR", {
+      day: "2-digit",
+      month: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
 
   const menuItems = [
     { id: "dashboard", name: "Dashboard", icon: Home, path: "/app/dashboard" },
     { id: "sites", name: "Sites Web", icon: Monitor, path: "/app/sites" },
-    { id: "users", name: "Utilisateurs", icon: Users, path: "/app/users" },
+    { id: "hostings", name: "Hébergements", icon: Server, path: "/app/hostings" },
+    { id: "interventions", name: "Interventions", icon: Wrench, path: "/app/interventions" },
     { id: "reports", name: "Rapports", icon: BarChart3, path: "/app/reports" },
+    { id: "settings", name: "Paramètres", icon: SettingsIcon, path: "/app/settings" },
   ];
 
   const handleLogout = async () => {
     await logout();
     navigate("/login");
+  };
+
+  // Titre de la page courante (gère aussi les sous-routes)
+  const getPageTitle = (pathname) => {
+    const exact = menuItems.find((item) => item.path === pathname);
+    if (exact) return exact.name;
+    if (pathname.startsWith("/app/sites/")) return "Détail du site";
+    if (pathname.startsWith("/app/profile")) return "Mon profil";
+    if (pathname.startsWith("/app/settings")) return "Paramètres";
+    return "MonitorPro";
   };
 
   return (
@@ -106,19 +141,75 @@ const Layout = ({ children }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <h1 className="text-xl font-semibold text-bordeaux-800">
-                {menuItems.find((item) => item.path === location.pathname)
-                  ?.name || "MonitorPro"}
+                {getPageTitle(location.pathname)}
               </h1>
             </div>
 
             <div className="flex items-center gap-4">
               {/* Notifications avec bordeaux */}
-              <button className="relative p-2 rounded-lg hover:bg-bordeaux-50 transition-colors">
-                <Bell className="w-5 h-5 text-bordeaux-600" />
-                <span className="absolute -top-1 -right-1 bg-bordeaux-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                  3
-                </span>
-              </button>
+              <div className="relative">
+                <button
+                  onClick={() => setNotificationsOpen(!notificationsOpen)}
+                  className="relative p-2 rounded-lg hover:bg-bordeaux-50 transition-colors"
+                >
+                  <Bell className="w-5 h-5 text-bordeaux-600" />
+                  {notificationCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-bordeaux-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                      {notificationCount > 9 ? "9+" : notificationCount}
+                    </span>
+                  )}
+                </button>
+
+                {/* Notifications Dropdown */}
+                {notificationsOpen && (
+                  <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                    <div className="px-4 py-3 border-b flex items-center justify-between">
+                      <span className="font-semibold text-bordeaux-800">
+                        Notifications
+                      </span>
+                      {notificationCount > 0 && (
+                        <span className="text-xs bg-bordeaux-100 text-bordeaux-700 px-2 py-0.5 rounded-full">
+                          {notificationCount} active
+                          {notificationCount > 1 ? "s" : ""}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="max-h-96 overflow-y-auto">
+                      {notificationCount === 0 ? (
+                        <div className="flex flex-col items-center justify-center py-8 text-gray-400">
+                          <CheckCircle className="w-8 h-8 mb-2 text-green-500" />
+                          <span className="text-sm">Aucune alerte active</span>
+                        </div>
+                      ) : (
+                        activeIncidents.map((incident) => (
+                          <div
+                            key={incident.id}
+                            className="px-4 py-3 border-b last:border-b-0 hover:bg-gray-50 transition-colors"
+                          >
+                            <div className="flex items-start gap-3">
+                              <AlertTriangle className="w-5 h-5 text-bordeaux-600 flex-shrink-0 mt-0.5" />
+                              <div className="min-w-0 flex-1">
+                                <div className="font-medium text-gray-800 truncate">
+                                  {incident.website?.name ||
+                                    incident.website?.url ||
+                                    "Site inconnu"}
+                                </div>
+                                <div className="text-sm text-gray-600 truncate">
+                                  {incident.description || "Incident détecté"}
+                                </div>
+                                <div className="text-xs text-gray-400 mt-1">
+                                  {formatIncidentDate(incident.started_at)}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
 
               {/* Profile Menu avec bordeaux */}
               <div className="relative">
@@ -172,10 +263,13 @@ const Layout = ({ children }) => {
       </div>
 
       {/* Overlay */}
-      {profileMenuOpen && (
+      {(profileMenuOpen || notificationsOpen) && (
         <div
           className="fixed inset-0 z-40"
-          onClick={() => setProfileMenuOpen(false)}
+          onClick={() => {
+            setProfileMenuOpen(false);
+            setNotificationsOpen(false);
+          }}
         />
       )}
     </div>

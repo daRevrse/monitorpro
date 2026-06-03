@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Plus, Edit, Trash2, User, Shield, RefreshCw } from "lucide-react";
+import {
+  Plus,
+  Edit,
+  Trash2,
+  Power,
+  User,
+  Shield,
+  RefreshCw,
+  Search,
+} from "lucide-react";
 import api from "../../services/api";
+import Pagination from "../Pagination";
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -13,10 +23,28 @@ const UserManagement = () => {
     last_name: "",
     role: "technician",
   });
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const pageSize = 10;
 
   useEffect(() => {
     loadUsers();
   }, []);
+
+  const q = search.trim().toLowerCase();
+  const filtered = q
+    ? users.filter((u) =>
+        [u.first_name, u.last_name, u.email, u.role]
+          .filter(Boolean)
+          .some((v) => v.toLowerCase().includes(q))
+      )
+    : users;
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const currentPage = Math.min(page, totalPages);
+  const paginated = filtered.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
 
   const loadUsers = async () => {
     try {
@@ -44,6 +72,32 @@ const UserManagement = () => {
     } catch (error) {
       console.error("Erreur sauvegarde utilisateur:", error);
       alert("Erreur lors de la sauvegarde");
+    }
+  };
+
+  const handleDelete = async (user) => {
+    if (
+      window.confirm(
+        `Supprimer l'utilisateur ${user.first_name} ${user.last_name} ?`
+      )
+    ) {
+      try {
+        await api.delete(`/auth/users/${user.id}`);
+        loadUsers();
+      } catch (error) {
+        console.error("Erreur suppression utilisateur:", error);
+        alert(error.response?.data?.message || "Erreur lors de la suppression");
+      }
+    }
+  };
+
+  const handleToggleActive = async (user) => {
+    try {
+      await api.put(`/auth/users/${user.id}`, { is_active: !user.is_active });
+      loadUsers();
+    } catch (error) {
+      console.error("Erreur changement de statut:", error);
+      alert(error.response?.data?.message || "Erreur lors du changement de statut");
     }
   };
 
@@ -104,6 +158,21 @@ const UserManagement = () => {
         </div>
       </div>
 
+      {/* Recherche */}
+      <div className="relative mb-4 max-w-md">
+        <Search className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+        <input
+          type="text"
+          placeholder="Rechercher (nom, email, rôle…)"
+          className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux-500 focus:border-bordeaux-500"
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setPage(1);
+          }}
+        />
+      </div>
+
       {/* Liste des utilisateurs */}
       <div className="bg-white rounded-lg shadow-sm border">
         <div className="overflow-x-auto">
@@ -128,11 +197,11 @@ const UserManagement = () => {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {users.map((user) => (
+              {paginated.map((user) => (
                 <tr key={user.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
-                      <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-medium text-sm">
+                      <div className="w-8 h-8 bg-bordeaux-600 text-white rounded-full flex items-center justify-center font-medium text-sm">
                         {user.first_name[0]}
                         {user.last_name[0]}
                       </div>
@@ -164,7 +233,7 @@ const UserManagement = () => {
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <button
                         onClick={() => {
                           setEditingUser(user);
@@ -177,9 +246,28 @@ const UserManagement = () => {
                           });
                           setShowModal(true);
                         }}
-                        className="text-blue-600 hover:text-blue-800"
+                        className="text-gray-500 hover:text-bordeaux-700"
+                        title="Modifier"
                       >
                         <Edit className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={() => handleToggleActive(user)}
+                        className={
+                          user.is_active
+                            ? "text-gray-500 hover:text-yellow-600"
+                            : "text-gray-500 hover:text-green-600"
+                        }
+                        title={user.is_active ? "Désactiver" : "Activer"}
+                      >
+                        <Power className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(user)}
+                        className="text-gray-500 hover:text-red-600"
+                        title="Supprimer"
+                      >
+                        <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
                   </td>
@@ -188,6 +276,12 @@ const UserManagement = () => {
             </tbody>
           </table>
         </div>
+        <Pagination
+          page={currentPage}
+          pageSize={pageSize}
+          total={filtered.length}
+          onPageChange={setPage}
+        />
       </div>
 
       {/* Modal de création/édition */}
@@ -207,7 +301,7 @@ const UserManagement = () => {
                   <input
                     type="text"
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux-500 focus:border-bordeaux-500"
                     value={formData.first_name}
                     onChange={(e) =>
                       setFormData({ ...formData, first_name: e.target.value })
@@ -221,7 +315,7 @@ const UserManagement = () => {
                   <input
                     type="text"
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux-500 focus:border-bordeaux-500"
                     value={formData.last_name}
                     onChange={(e) =>
                       setFormData({ ...formData, last_name: e.target.value })
@@ -237,7 +331,7 @@ const UserManagement = () => {
                 <input
                   type="email"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux-500 focus:border-bordeaux-500"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -255,7 +349,7 @@ const UserManagement = () => {
                   type="password"
                   required={!editingUser}
                   minLength="8"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux-500 focus:border-bordeaux-500"
                   value={formData.password}
                   onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
@@ -268,7 +362,7 @@ const UserManagement = () => {
                   Rôle
                 </label>
                 <select
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux-500 focus:border-bordeaux-500"
                   value={formData.role}
                   onChange={(e) =>
                     setFormData({ ...formData, role: e.target.value })

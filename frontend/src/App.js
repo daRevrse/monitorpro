@@ -7,17 +7,21 @@ import {
   Navigate,
 } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
+import { MonitoringProvider } from "./contexts/MonitoringContext";
 
 // Pages publiques
-import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 // Pages protégées
 import Dashboard from "./pages/Dashboard";
 import Sites from "./pages/Sites";
+import SiteDetail from "./pages/SiteDetail";
+import Hostings from "./pages/Hostings";
+import Interventions from "./pages/Interventions";
 import Reports from "./pages/Reports";
 import Profile from "./pages/Profile"; // ✅ Nouvelle page
+import Settings from "./pages/Settings";
 import UserManagement from "./components/admin/UserManagement";
 
 // Composants
@@ -30,11 +34,12 @@ import "./index.css";
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <div className="App">
+      <MonitoringProvider>
+        <Router>
+          <div className="App">
           <Routes>
-            {/* Routes publiques */}
-            <Route path="/" element={<Landing />} />
+            {/* Racine : redirige vers l'app (ou /login si non connecté) */}
+            <Route path="/" element={<Navigate to="/app" />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
 
@@ -51,9 +56,12 @@ function App() {
                       />
                       <Route path="/dashboard" element={<Dashboard />} />
                       <Route path="/sites" element={<Sites />} />
+                      <Route path="/sites/:id" element={<SiteDetail />} />
+                      <Route path="/hostings" element={<Hostings />} />
+                      <Route path="/interventions" element={<Interventions />} />
                       <Route path="/reports" element={<Reports />} />
-                      <Route path="/profile" element={<Profile />} />{" "}
-                      {/* ✅ Nouvelle route */}
+                      <Route path="/profile" element={<Profile />} />
+                      <Route path="/settings" element={<Settings />} />
                       <Route path="/users" element={<UserManagement />} />
                     </Routes>
                   </Layout>
@@ -74,8 +82,9 @@ function App() {
             {/* Route 404 */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-        </div>
-      </Router>
+          </div>
+        </Router>
+      </MonitoringProvider>
     </AuthProvider>
   );
 }

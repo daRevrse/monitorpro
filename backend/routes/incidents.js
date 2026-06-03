@@ -29,7 +29,7 @@ router.get(
 
       const { company_id, role } = req.user;
       const { status, severity, limit = 20, offset = 0 } = req.query;
-      const whereClause = role === "admin" && !company_id ? {} : { company_id };
+      const whereClause = {};
 
       const incidentWhere = {};
       if (status) incidentWhere.status = status;

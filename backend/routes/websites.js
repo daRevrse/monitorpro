@@ -2,10 +2,12 @@
 // backend/routes/websites.js
 // ========================================
 const express = require("express");
+const { Op } = require("sequelize");
 const { body, validationResult } = require("express-validator");
-const { Website, Company } = require("../models");
+const { Website, Company, WebsiteCheck } = require("../models");
 const { authenticateToken, requireRole } = require("../middleware/auth");
 const monitorService = require("../services/monitorService");
+const settingsService = require("../services/settingsService");
 const logger = require("../utils/logger");
 
 const router = express.Router();
@@ -17,31 +19,84 @@ router.use(authenticateToken);
 router.get("/", async (req, res) => {
   try {
     const { company_id, role } = req.user;
-    const whereClause = role === "admin" && !company_id ? {} : { company_id };
+    const whereClause = {};
 
     const websites = await Website.findAll({
       where: whereClause,
-      include: ["company", "creator"],
+      include: ["company", "creator", "hostingAccount"],
       order: [["name", "ASC"]],
     });
 
+    // Récupérer les checks des dernières 24h pour calculer les métriques live
+    const siteIds = websites.map((s) => s.id);
+    const last24h = new Date(Date.now() - 24 * 60 * 60 * 1000);
+    let checks = [];
+    if (siteIds.length > 0) {
+      checks = await WebsiteCheck.findAll({
+        where: {
+          website_id: { [Op.in]: siteIds },
+          checked_at: { [Op.gte]: last24h },
+        },
+        order: [["checked_at", "DESC"]],
+      });
+    }
+
+    // Regrouper par site (les checks sont déjà triés du plus récent au plus ancien)
+    const checksBySite = {};
+    for (const check of checks) {
+      if (!checksBySite[check.website_id]) {
+        checksBySite[check.website_id] = [];
+      }
+      checksBySite[check.website_id].push(check);
+    }
+
     res.json({
       success: true,
-      data: websites.map((site) => ({
-        id: site.id,
-        name: site.name,
-        url: site.url,
-        client_name: site.client_name,
-        status: site.status,
-        check_interval: site.check_interval,
-        timeout_threshold: site.timeout_threshold,
-        ssl_check: site.ssl_check,
-        is_active: site.is_active,
-        company: site.company ? site.company.name : null,
-        created_by: site.creator ? site.creator.getFullName() : null,
-        created_at: site.created_at,
-        updated_at: site.updated_at,
-      })),
+      data: websites.map((site) => {
+        const siteChecks = checksBySite[site.id] || [];
+        const latest = siteChecks[0] || null;
+        const upCount = siteChecks.filter((c) => c.status === "up").length;
+        const uptime24h =
+          siteChecks.length > 0
+            ? parseFloat(((upCount / siteChecks.length) * 100).toFixed(2))
+            : null;
+        const sslCheck = siteChecks.find((c) => c.ssl_expires_at) || null;
+
+        return {
+          id: site.id,
+          name: site.name,
+          url: site.url,
+          client_name: site.client_name,
+          hosting_account_id: site.hosting_account_id,
+          hosting_account: site.hostingAccount
+            ? { id: site.hostingAccount.id, name: site.hostingAccount.name }
+            : null,
+          site_type: site.site_type,
+          hosting_provider: site.hosting_provider,
+          hosting_account: site.hosting_account,
+          hosting_panel_url: site.hosting_panel_url,
+          hosting_account_email: site.hosting_account_email,
+          hosting_expires_at: site.hosting_expires_at,
+          server_ip: site.server_ip,
+          notes: site.notes,
+          status: site.status,
+          check_interval: site.check_interval,
+          timeout_threshold: site.timeout_threshold,
+          ssl_check: site.ssl_check,
+          is_active: site.is_active,
+          company: site.company ? site.company.name : null,
+          created_by: site.creator ? site.creator.getFullName() : null,
+          created_at: site.created_at,
+          updated_at: site.updated_at,
+          // Métriques live (24h)
+          last_check: latest ? latest.checked_at : null,
+          last_status_code: latest ? latest.status_code : null,
+          last_response_time: latest ? latest.response_time : null,
+          ssl_valid: sslCheck ? sslCheck.ssl_valid : null,
+          ssl_expires_at: sslCheck ? sslCheck.ssl_expires_at : null,
+          uptime_24h: uptime24h,
+        };
+      }),
     });
   } catch (error) {
     logger.error("Erreur liste sites:", error);
@@ -58,7 +113,28 @@ router.post(
   [
     body("name").isLength({ min: 1, max: 255 }).trim(),
     body("url").isURL(),
-    body("client_name").optional().isLength({ max: 255 }).trim(),
+    body("client_name").optional({ nullable: true }).isLength({ max: 255 }).trim(),
+    body("hosting_account_id").optional({ nullable: true }).isInt(),
+    body("site_type").optional({ nullable: true }).isLength({ max: 100 }).trim(),
+    body("hosting_provider")
+      .optional({ nullable: true })
+      .isLength({ max: 255 })
+      .trim(),
+    body("hosting_account")
+      .optional({ nullable: true })
+      .isLength({ max: 255 })
+      .trim(),
+    body("hosting_panel_url")
+      .optional({ nullable: true, checkFalsy: true })
+      .isURL(),
+    body("hosting_account_email")
+      .optional({ nullable: true, checkFalsy: true })
+      .isEmail(),
+    body("hosting_expires_at")
+      .optional({ nullable: true, checkFalsy: true })
+      .isISO8601(),
+    body("server_ip").optional({ nullable: true }).isLength({ max: 100 }).trim(),
+    body("notes").optional({ nullable: true }).isLength({ max: 5000 }).trim(),
     body("check_interval").optional().isInt({ min: 60, max: 86400 }),
     body("timeout_threshold").optional().isInt({ min: 1000, max: 120000 }),
     body("ssl_check").optional().isBoolean(),
@@ -77,6 +153,15 @@ router.post(
         name,
         url,
         client_name,
+        hosting_account_id,
+        site_type,
+        hosting_provider,
+        hosting_account,
+        hosting_panel_url,
+        hosting_account_email,
+        hosting_expires_at,
+        server_ip,
+        notes,
         check_interval,
         timeout_threshold,
         ssl_check,
@@ -87,11 +172,24 @@ router.post(
         name,
         url,
         client_name,
+        hosting_account_id: hosting_account_id || null,
+        site_type: site_type || null,
+        hosting_provider: hosting_provider || null,
+        hosting_account: hosting_account || null,
+        hosting_panel_url: hosting_panel_url || null,
+        hosting_account_email: hosting_account_email || null,
+        hosting_expires_at: hosting_expires_at || null,
+        server_ip: server_ip || null,
+        notes: notes || null,
         company_id,
         created_by: user_id,
-        check_interval: check_interval || 300,
-        timeout_threshold: timeout_threshold || 10000,
-        ssl_check: ssl_check !== undefined ? ssl_check : true,
+        check_interval: check_interval || settingsService.get().default_check_interval,
+        timeout_threshold:
+          timeout_threshold || settingsService.get().default_timeout,
+        ssl_check:
+          ssl_check !== undefined
+            ? ssl_check
+            : settingsService.get().default_ssl_check,
       });
 
       // Ajouter le site au monitoring
@@ -125,7 +223,28 @@ router.put(
   [
     body("name").optional().isLength({ min: 1, max: 255 }).trim(),
     body("url").optional().isURL(),
-    body("client_name").optional().isLength({ max: 255 }).trim(),
+    body("client_name").optional({ nullable: true }).isLength({ max: 255 }).trim(),
+    body("hosting_account_id").optional({ nullable: true }).isInt(),
+    body("site_type").optional({ nullable: true }).isLength({ max: 100 }).trim(),
+    body("hosting_provider")
+      .optional({ nullable: true })
+      .isLength({ max: 255 })
+      .trim(),
+    body("hosting_account")
+      .optional({ nullable: true })
+      .isLength({ max: 255 })
+      .trim(),
+    body("hosting_panel_url")
+      .optional({ nullable: true, checkFalsy: true })
+      .isURL(),
+    body("hosting_account_email")
+      .optional({ nullable: true, checkFalsy: true })
+      .isEmail(),
+    body("hosting_expires_at")
+      .optional({ nullable: true, checkFalsy: true })
+      .isISO8601(),
+    body("server_ip").optional({ nullable: true }).isLength({ max: 100 }).trim(),
+    body("notes").optional({ nullable: true }).isLength({ max: 5000 }).trim(),
     body("check_interval").optional().isInt({ min: 60, max: 86400 }),
     body("timeout_threshold").optional().isInt({ min: 1000, max: 120000 }),
     body("ssl_check").optional().isBoolean(),
@@ -143,7 +262,7 @@ router.put(
 
       const { id } = req.params;
       const { company_id, role } = req.user;
-      const whereClause = role === "admin" && !company_id ? {} : { company_id };
+      const whereClause = {};
 
       const website = await Website.findOne({
         where: { id, ...whereClause },
@@ -161,6 +280,15 @@ router.put(
         "name",
         "url",
         "client_name",
+        "hosting_account_id",
+        "site_type",
+        "hosting_provider",
+        "hosting_account",
+        "hosting_panel_url",
+        "hosting_account_email",
+        "hosting_expires_at",
+        "server_ip",
+        "notes",
         "check_interval",
         "timeout_threshold",
         "ssl_check",
@@ -201,7 +329,7 @@ router.delete("/:id", requireRole(["admin", "manager"]), async (req, res) => {
   try {
     const { id } = req.params;
     const { company_id, role } = req.user;
-    const whereClause = role === "admin" && !company_id ? {} : { company_id };
+    const whereClause = {};
 
     const website = await Website.findOne({
       where: { id, ...whereClause },

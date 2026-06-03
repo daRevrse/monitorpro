@@ -1,14 +1,19 @@
 // backend/services/alertService.js
 const emailService = require("./emailService");
 const { User, Website, Company } = require("../models");
+const settingsService = require("./settingsService");
 const logger = require("../utils/logger");
 
 class AlertService {
   constructor() {
     this.alertQueue = [];
     this.isProcessing = false;
-    this.cooldownPeriod = 10 * 60 * 1000; // 10 minutes entre alertes pour même site
     this.lastAlerts = new Map(); // site_id -> timestamp
+  }
+
+  // Cooldown courant (depuis les paramètres dynamiques)
+  get cooldownPeriod() {
+    return settingsService.get().alert_cooldown || 10 * 60 * 1000;
   }
 
   // Envoyer une alerte
@@ -190,7 +195,7 @@ class AlertService {
     try {
       // À implémenter selon les besoins
       // Exemple pour Slack:
-      if (process.env.SLACK_WEBHOOK_URL) {
+      if (settingsService.get().slack_webhook_url) {
         await this.sendSlackAlert(site, checkResult);
       }
     } catch (error) {
@@ -253,7 +258,7 @@ class AlertService {
         });
       }
 
-      await axios.post(process.env.SLACK_WEBHOOK_URL, message);
+      await axios.post(settingsService.get().slack_webhook_url, message);
       logger.debug("Alerte Slack envoyée");
     } catch (error) {
       logger.error("Erreur lors de l'envoi de l'alerte Slack:", error);

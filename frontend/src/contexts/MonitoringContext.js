@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, useEffect } from "react";
 import { useAuth } from "./AuthContext";
 import wsService from "../services/websocket";
+import api from "../services/api";
 
 const MonitoringContext = createContext();
 
@@ -8,6 +9,8 @@ const monitoringReducer = (state, action) => {
   switch (action.type) {
     case "SET_SITES":
       return { ...state, sites: action.payload };
+    case "SET_INCIDENTS":
+      return { ...state, incidents: action.payload };
     case "UPDATE_SITE_STATUS":
       return {
         ...state,
@@ -55,8 +58,27 @@ export const MonitoringProvider = ({ children }) => {
 
   const { accessToken, isAuthenticated } = useAuth();
 
+  const refreshIncidents = async () => {
+    try {
+      const response = await api.get("/incidents", {
+        params: { limit: 50 },
+      });
+      if (response.data?.success) {
+        dispatch({
+          type: "SET_INCIDENTS",
+          payload: response.data.data.incidents,
+        });
+      }
+    } catch (error) {
+      console.error("Erreur lors du chargement des incidents:", error);
+    }
+  };
+
   useEffect(() => {
     if (isAuthenticated && accessToken) {
+      // Charger les incidents existants
+      refreshIncidents();
+
       // Connecter WebSocket
       wsService.connect(accessToken);
       wsService.subscribeToMonitoring();
@@ -106,6 +128,7 @@ export const MonitoringProvider = ({ children }) => {
       value={{
         ...state,
         updateSites,
+        refreshIncidents,
       }}
     >
       {children}

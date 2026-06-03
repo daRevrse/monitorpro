@@ -4,6 +4,9 @@ const UserSession = require("./UserSession");
 const Website = require("./Website");
 const WebsiteCheck = require("./WebsiteCheck");
 const Incident = require("./Incident");
+const Intervention = require("./Intervention");
+const HostingAccount = require("./HostingAccount");
+const Settings = require("./Settings");
 
 // Définir les associations
 Company.hasMany(User, { foreignKey: "company_id", as: "users" });
@@ -24,6 +27,26 @@ WebsiteCheck.belongsTo(Website, { foreignKey: "website_id", as: "website" });
 Website.hasMany(Incident, { foreignKey: "website_id", as: "incidents" });
 Incident.belongsTo(Website, { foreignKey: "website_id", as: "website" });
 
+Website.hasMany(Intervention, {
+  foreignKey: "website_id",
+  as: "interventions",
+});
+Intervention.belongsTo(Website, { foreignKey: "website_id", as: "website" });
+User.hasMany(Intervention, {
+  foreignKey: "performed_by",
+  as: "interventions",
+});
+Intervention.belongsTo(User, { foreignKey: "performed_by", as: "technician" });
+
+HostingAccount.hasMany(Website, {
+  foreignKey: "hosting_account_id",
+  as: "websites",
+});
+Website.belongsTo(HostingAccount, {
+  foreignKey: "hosting_account_id",
+  as: "hostingAccount",
+});
+
 User.hasMany(Incident, {
   foreignKey: "acknowledged_by",
   as: "acknowledged_incidents",
@@ -39,4 +62,7 @@ module.exports = {
   Website,
   WebsiteCheck,
   Incident,
+  Intervention,
+  HostingAccount,
+  Settings,
 };

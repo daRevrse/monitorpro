@@ -297,7 +297,7 @@ class MonitorService {
         if (!openIncident) {
           // Créer un nouvel incident
           const severity = newStatus === "down" ? "high" : "medium";
-          await Incident.create({
+          const incident = await Incident.create({
             website_id: site.id,
             severity: severity,
             description: checkResult.error_message || `Site ${newStatus}`,
@@ -305,16 +305,43 @@ class MonitorService {
           });
 
           logger.info(`Nouvel incident créé pour ${site.url}: ${severity}`);
+
+          // Notifier les clients en temps réel
+          if (global.socketBroadcast) {
+            global.socketBroadcast.monitoring("new_incident", {
+              id: incident.id,
+              status: incident.status,
+              severity: incident.severity,
+              description: incident.description,
+              started_at: incident.started_at,
+              resolved_at: null,
+              website: {
+                id: site.id,
+                name: site.name,
+                url: site.url,
+              },
+            });
+          }
         }
       } else if (
         newStatus === "up" &&
         (previousStatus === "down" || previousStatus === "warning")
       ) {
+        // Récupérer les incidents ouverts avant résolution (pour notifier)
+        const openIncidents = await Incident.findAll({
+          where: {
+            website_id: site.id,
+            status: "open",
+          },
+        });
+
+        const resolvedAt = new Date();
+
         // Résoudre les incidents ouverts
         await Incident.update(
           {
             status: "resolved",
-            resolved_at: new Date(),
+            resolved_at: resolvedAt,
           },
           {
             where: {
@@ -325,6 +352,16 @@ class MonitorService {
         );
 
         logger.info(`Incidents résolus pour ${site.url}`);
+
+        // Notifier les clients en temps réel
+        if (global.socketBroadcast) {
+          openIncidents.forEach((incident) => {
+            global.socketBroadcast.monitoring("incident_resolved", {
+              id: incident.id,
+              resolved_at: resolvedAt,
+            });
+          });
+        }
       }
     } catch (error) {
       logger.error("Erreur lors de la gestion des incidents:", error);
