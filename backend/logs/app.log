@@ -4126,3 +4126,990 @@
 {"level":"debug","message":"Désinscription monitoring: 9","timestamp":"2026-06-03 00:09:10"}
 {"level":"info","message":"Client déconnecté: ZJnG8sf-oIuN4EWiAAAB (Raison: client namespace disconnect)","timestamp":"2026-06-03 00:09:10"}
 {"level":"info","message":"Signal SIGINT reçu, arrêt en cours...","timestamp":"2026-06-03 00:09:33"}
+{"level":"info","message":"Configuration des middlewares...","timestamp":"2026-06-03 08:12:52"}
+{"level":"info","message":"Configuration des routes...","timestamp":"2026-06-03 08:12:52"}
+{"level":"info","message":"Connexion à la base de données...","timestamp":"2026-06-03 08:12:52"}
+{"level":"info","message":"Configuration WebSocket...","timestamp":"2026-06-03 08:12:52"}
+{"level":"info","message":"Démarrage des tâches cron de monitoring","timestamp":"2026-06-03 08:12:52"}
+{"level":"info","message":"Toutes les tâches cron sont démarrées","timestamp":"2026-06-03 08:12:52"}
+{"level":"info","message":"Environnement: undefined","timestamp":"2026-06-03 08:12:52"}
+{"level":"info","message":"URL de santé: http://localhost:3001/health","timestamp":"2026-06-03 08:12:52"}
+{"level":"info","message":"Paramètres applicatifs chargés","timestamp":"2026-06-03 08:12:52"}
+{"level":"info","message":"Service email configuré avec succès","timestamp":"2026-06-03 08:12:54"}
+{"level":"error","message":"Configuration SMTP invalide:","timestamp":"2026-06-03 08:12:54"}
+{"level":"info","message":"Démarrage du service de monitoring","timestamp":"2026-06-03 08:12:57"}
+{"level":"info","message":"68 sites chargés pour monitoring","timestamp":"2026-06-03 08:12:57"}
+{"level":"info","message":"Service de monitoring démarré via cron","timestamp":"2026-06-03 08:12:57"}
+{"level":"info","message":"Client connecté: 3vvoi6_95cQBK4rwAAAB (User: 9)","timestamp":"2026-06-03 08:13:24"}
+{"level":"debug","message":"Souscription monitoring: 9","timestamp":"2026-06-03 08:13:24"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 08:15:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 08:17:58"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 08:17:58"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 08:17:58"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 08:17:58"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 08:17:58"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 08:17:58"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 08:17:58"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 08:17:58"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 08:17:58"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 08:17:58"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 08:18:03"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 08:18:03"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 08:18:03"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 08:18:03"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 08:18:03"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 08:18:03"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 08:18:03"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 08:18:03"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 08:18:03"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 08:18:03"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 08:18:08"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 08:18:08"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 08:18:08"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 08:18:08"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 08:18:08"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 08:18:08"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 08:18:08"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 08:18:08"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 08:18:08"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 08:18:08"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 08:18:13"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 08:18:13"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 08:18:13"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 08:18:13"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 08:18:13"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 08:18:13"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 08:18:13"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 08:18:13"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 08:18:13"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 08:18:13"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 08:18:18"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 08:18:18"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 08:18:18"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 08:18:18"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 08:18:18"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 08:18:18"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 08:18:18"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 08:18:18"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 08:18:18"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 08:18:18"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 08:18:23"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 08:18:23"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 08:18:23"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 08:18:23"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 08:18:23"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 08:18:23"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 08:18:23"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 08:18:23"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 08:18:23"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 08:18:23"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 08:18:28"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 08:18:28"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 08:18:28"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 08:18:28"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 08:18:28"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 08:18:28"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 08:18:28"}
+{"level":"info","message":"Statut changé pour https://callvroom.com: up → warning","timestamp":"2026-06-03 08:18:29"}
+{"level":"info","message":"Nouvel incident créé pour https://callvroom.com: medium","timestamp":"2026-06-03 08:18:29"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://callvroom.com","timestamp":"2026-06-03 08:18:29"}
+{"level":"info","message":"Statut changé pour https://cais-tchad.com: warning → up","timestamp":"2026-06-03 08:18:36"}
+{"level":"info","message":"Incidents résolus pour https://cais-tchad.com","timestamp":"2026-06-03 08:18:36"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://cais-tchad.com","timestamp":"2026-06-03 08:18:36"}
+{"level":"info","message":"Statut changé pour https://affordtogo.com: up → down","timestamp":"2026-06-03 08:18:38"}
+{"level":"info","message":"Nouvel incident créé pour https://affordtogo.com: high","timestamp":"2026-06-03 08:18:38"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://affordtogo.com","timestamp":"2026-06-03 08:18:38"}
+{"alerts":{"activeCooldowns":3,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 08:20:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 08:22:58"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 08:22:58"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 08:23:03"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 08:23:03"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 08:23:03"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 08:23:03"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 08:23:03"}
+{"level":"info","message":"Statut changé pour https://giftconseils.com/: up → warning","timestamp":"2026-06-03 08:23:04"}
+{"level":"info","message":"Nouvel incident créé pour https://giftconseils.com/: medium","timestamp":"2026-06-03 08:23:04"}
+{"level":"warn","message":"Service email non configuré - alerte non envoyée","timestamp":"2026-06-03 08:23:04"}
+{"error_message":"Code HTTP 403","level":"info","message":"Alerte envoyée:","recipient_count":1,"response_time":561,"site_id":4,"site_url":"https://giftconseils.com/","status":"warning","timestamp":"2026-06-03 08:23:04"}
+{"level":"debug","message":"Emails d'alerte envoyés à 1 utilisateurs","timestamp":"2026-06-03 08:23:04"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 08:23:08"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 08:23:08"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 08:23:08"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 08:23:08"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 08:23:08"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 08:23:08"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 08:23:08"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 08:23:08"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 08:23:08"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 08:23:08"}
+{"level":"debug","message":"Alerte Slack envoyée","timestamp":"2026-06-03 08:23:09"}
+{"level":"info","message":"Alerte envoyée pour https://giftconseils.com/ à 1 utilisateurs","timestamp":"2026-06-03 08:23:09"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 08:23:13"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 08:23:13"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 08:23:13"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 08:23:13"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 08:23:13"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 08:23:13"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 08:23:13"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 08:23:13"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 08:23:13"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 08:23:13"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 08:23:18"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 08:23:18"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 08:23:18"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 08:23:18"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 08:23:18"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 08:23:18"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 08:23:18"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 08:23:18"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 08:23:18"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 08:23:18"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 08:23:23"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 08:23:23"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 08:23:23"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 08:23:23"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 08:23:23"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 08:23:23"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 08:23:23"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 08:23:23"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 08:23:23"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 08:23:23"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 08:23:28"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 08:23:28"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 08:23:28"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 08:23:28"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 08:23:28"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 08:23:28"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 08:23:28"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 08:23:28"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 08:23:28"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 08:23:28"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 08:23:33"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 08:23:33"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 08:23:33"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 08:23:33"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 08:23:33"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 08:23:33"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 08:23:33"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 08:23:38"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 08:23:38"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 08:23:38"}
+{"alerts":{"activeCooldowns":4,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 08:25:00"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 08:27:59"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 08:27:59"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 08:28:04"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 08:28:09"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 08:28:09"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 08:28:09"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 08:28:09"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 08:28:09"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 08:28:09"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 08:28:09"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 08:28:14"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 08:28:14"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 08:28:14"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 08:28:14"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 08:28:14"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 08:28:14"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 08:28:14"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 08:28:14"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 08:28:14"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 08:28:19"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 08:28:19"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 08:28:19"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 08:28:19"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 08:28:19"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 08:28:19"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 08:28:19"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 08:28:19"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 08:28:19"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 08:28:19"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 08:28:24"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 08:28:24"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 08:28:24"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 08:28:24"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 08:28:24"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 08:28:24"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 08:28:24"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 08:28:24"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 08:28:24"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 08:28:24"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 08:28:29"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 08:28:29"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 08:28:29"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 08:28:29"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 08:28:29"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 08:28:29"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 08:28:29"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 08:28:29"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 08:28:29"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 08:28:29"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 08:28:34"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 08:28:34"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 08:28:34"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 08:28:34"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 08:28:34"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 08:28:34"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 08:28:34"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 08:28:34"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 08:28:34"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 08:28:39"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 08:28:39"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 08:28:39"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 08:28:39"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 08:28:39"}
+{"level":"info","message":"Statut changé pour https://www.llctogo.com: up → down","timestamp":"2026-06-03 08:28:39"}
+{"level":"info","message":"Nouvel incident créé pour https://www.llctogo.com: high","timestamp":"2026-06-03 08:28:39"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://www.llctogo.com","timestamp":"2026-06-03 08:28:39"}
+{"level":"info","message":"Statut changé pour https://sisaaptchad.org: up → down","timestamp":"2026-06-03 08:28:40"}
+{"level":"info","message":"Nouvel incident créé pour https://sisaaptchad.org: high","timestamp":"2026-06-03 08:28:40"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://sisaaptchad.org","timestamp":"2026-06-03 08:28:40"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 08:28:44"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 08:28:44"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 08:28:49"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 08:28:49"}
+{"alerts":{"activeCooldowns":6,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 08:30:00"}
+{"level":"debug","message":"Nettoyage des cooldowns d'alertes effectué","timestamp":"2026-06-03 08:30:00"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 08:32:59"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 08:32:59"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 08:33:04"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 08:33:09"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 08:33:09"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 08:33:09"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 08:33:14"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 08:33:14"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 08:33:14"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 08:33:14"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 08:33:14"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 08:33:14"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 08:33:14"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 08:33:19"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 08:33:19"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 08:33:19"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 08:33:19"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 08:33:19"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 08:33:19"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 08:33:19"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 08:33:19"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 08:33:19"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 08:33:24"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 08:33:24"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 08:33:24"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 08:33:24"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 08:33:24"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 08:33:24"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 08:33:24"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 08:33:24"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 08:33:24"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 08:33:24"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 08:33:29"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 08:33:29"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 08:33:29"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 08:33:29"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 08:33:29"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 08:33:29"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 08:33:29"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 08:33:29"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 08:33:29"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 08:33:29"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 08:33:34"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 08:33:34"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 08:33:34"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 08:33:34"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 08:33:34"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 08:33:34"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 08:33:34"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 08:33:39"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 08:33:39"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 08:33:39"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 08:33:39"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 08:33:39"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 08:33:39"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 08:33:39"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 08:33:39"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 08:33:44"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 08:33:44"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 08:33:44"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 08:33:44"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 08:33:44"}
+{"level":"info","message":"Statut changé pour https://www.llctogo.com: down → up","timestamp":"2026-06-03 08:33:47"}
+{"level":"info","message":"Incidents résolus pour https://www.llctogo.com","timestamp":"2026-06-03 08:33:47"}
+{"level":"debug","message":"Alerte ignorée pour https://www.llctogo.com (cooldown actif)","timestamp":"2026-06-03 08:33:47"}
+{"level":"info","message":"Statut changé pour https://sisaaptchad.org: down → up","timestamp":"2026-06-03 08:33:48"}
+{"level":"info","message":"Incidents résolus pour https://sisaaptchad.org","timestamp":"2026-06-03 08:33:48"}
+{"level":"debug","message":"Alerte ignorée pour https://sisaaptchad.org (cooldown actif)","timestamp":"2026-06-03 08:33:48"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 08:33:49"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 08:33:49"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 08:33:49"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 08:33:54"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 08:33:59"}
+{"alerts":{"activeCooldowns":6,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 08:35:00"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 08:38:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 08:38:00"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 08:38:05"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 08:38:10"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 08:38:10"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 08:38:10"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 08:38:15"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 08:38:15"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 08:38:15"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 08:38:20"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 08:38:20"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 08:38:20"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 08:38:20"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 08:38:20"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 08:38:20"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 08:38:20"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 08:38:25"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 08:38:25"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 08:38:25"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 08:38:25"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 08:38:25"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 08:38:25"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 08:38:25"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 08:38:30"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 08:38:30"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 08:38:30"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 08:38:30"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 08:38:30"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 08:38:30"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 08:38:30"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 08:38:30"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 08:38:30"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 08:38:30"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 08:38:35"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 08:38:35"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 08:38:35"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 08:38:35"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 08:38:35"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 08:38:35"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 08:38:35"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 08:38:35"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 08:38:35"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 08:38:35"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 08:38:40"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 08:38:40"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 08:38:40"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 08:38:40"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 08:38:40"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 08:38:40"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 08:38:40"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 08:38:40"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 08:38:45"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 08:38:45"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 08:38:45"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 08:38:45"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 08:38:50"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 08:38:50"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 08:38:50"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 08:38:50"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 08:38:50"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 08:38:50"}
+{"level":"info","message":"Statut changé pour https://callvroom.com: warning → up","timestamp":"2026-06-03 08:38:54"}
+{"level":"info","message":"Incidents résolus pour https://callvroom.com","timestamp":"2026-06-03 08:38:54"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://callvroom.com","timestamp":"2026-06-03 08:38:54"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 08:38:55"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 08:38:55"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 08:39:00"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 08:39:00"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 08:39:05"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 08:39:10"}
+{"level":"info","message":"Statut changé pour https://affordtogo.com: down → up","timestamp":"2026-06-03 08:39:18"}
+{"level":"info","message":"Incidents résolus pour https://affordtogo.com","timestamp":"2026-06-03 08:39:18"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://affordtogo.com","timestamp":"2026-06-03 08:39:18"}
+{"alerts":{"activeCooldowns":6,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 08:40:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 08:43:00"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 08:43:00"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 08:43:05"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 08:43:10"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 08:43:10"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 08:43:10"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 08:43:15"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 08:43:15"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 08:43:15"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 08:43:20"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 08:43:20"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 08:43:20"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 08:43:25"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 08:43:25"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 08:43:25"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 08:43:26"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 08:43:26"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 08:43:26"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 08:43:26"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 08:43:30"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 08:43:30"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 08:43:30"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 08:43:30"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 08:43:31"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 08:43:31"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 08:43:36"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 08:43:36"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 08:43:36"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 08:43:36"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 08:43:36"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 08:43:36"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 08:43:36"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 08:43:36"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 08:43:36"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 08:43:36"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 08:43:41"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 08:43:41"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 08:43:41"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 08:43:41"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 08:43:41"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 08:43:41"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 08:43:41"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 08:43:41"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 08:43:41"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 08:43:41"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 08:43:46"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 08:43:46"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 08:43:46"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 08:43:46"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 08:43:46"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 08:43:46"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 08:43:51"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 08:43:51"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 08:43:51"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 08:43:51"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 08:43:56"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 08:43:56"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 08:43:56"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 08:43:56"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 08:43:56"}
+{"level":"info","message":"Statut changé pour https://callvroom.com: up → warning","timestamp":"2026-06-03 08:44:00"}
+{"level":"info","message":"Nouvel incident créé pour https://callvroom.com: medium","timestamp":"2026-06-03 08:44:00"}
+{"level":"debug","message":"Alerte ignorée pour https://callvroom.com (cooldown actif)","timestamp":"2026-06-03 08:44:00"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 08:44:01"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 08:44:01"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 08:44:06"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 08:44:11"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 08:44:11"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 08:44:16"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 08:44:21"}
+{"level":"info","message":"Statut changé pour https://affordtogo.com: up → down","timestamp":"2026-06-03 08:44:28"}
+{"level":"info","message":"Nouvel incident créé pour https://affordtogo.com: high","timestamp":"2026-06-03 08:44:28"}
+{"level":"debug","message":"Alerte ignorée pour https://affordtogo.com (cooldown actif)","timestamp":"2026-06-03 08:44:28"}
+{"alerts":{"activeCooldowns":6,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 08:45:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 08:48:01"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 08:48:01"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 08:48:06"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 08:48:11"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 08:48:11"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 08:48:11"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 08:48:16"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 08:48:16"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 08:48:16"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 08:48:21"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 08:48:21"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 08:48:21"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 08:48:26"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 08:48:26"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 08:48:26"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 08:48:31"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 08:48:31"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 08:48:31"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 08:48:31"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 08:48:31"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 08:48:31"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 08:48:31"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 08:48:31"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 08:48:36"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 08:48:36"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 08:48:36"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 08:48:36"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 08:48:36"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 08:48:41"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 08:48:41"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 08:48:41"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 08:48:41"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 08:48:41"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 08:48:41"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 08:48:41"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 08:48:41"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 08:48:41"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 08:48:41"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 08:48:46"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 08:48:46"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 08:48:46"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 08:48:46"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 08:48:46"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 08:48:46"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 08:48:46"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 08:48:46"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 08:48:46"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 08:48:46"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 08:48:51"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 08:48:51"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 08:48:51"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 08:48:56"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 08:48:56"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 08:48:56"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 08:48:56"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 08:49:01"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 08:49:01"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 08:49:01"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 08:49:01"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 08:49:06"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 08:49:06"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 08:49:11"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 08:49:16"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 08:49:21"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 08:49:21"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 08:49:21"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 08:49:31"}
+{"alerts":{"activeCooldowns":6,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 08:50:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 08:53:02"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 08:53:02"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 08:53:07"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 08:53:12"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 08:53:12"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 08:53:12"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 08:53:17"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 08:53:17"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 08:53:17"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 08:53:22"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 08:53:22"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 08:53:22"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 08:53:27"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 08:53:27"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 08:53:27"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 08:53:32"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 08:53:37"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 08:53:37"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 08:53:37"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 08:53:37"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 08:53:37"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 08:53:37"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 08:53:37"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 08:53:37"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 08:53:37"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 08:53:37"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 08:53:42"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 08:53:42"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 08:53:42"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 08:53:42"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 08:53:47"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 08:53:47"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 08:53:47"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 08:53:47"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 08:53:47"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 08:53:47"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 08:53:47"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 08:53:47"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 08:53:47"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 08:53:47"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 08:53:52"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 08:53:52"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 08:53:52"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 08:53:52"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 08:53:52"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 08:53:52"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 08:53:52"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 08:53:52"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 08:53:52"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 08:53:57"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 08:53:57"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 08:54:02"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 08:54:02"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 08:54:02"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 08:54:02"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 08:54:07"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 08:54:07"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 08:54:07"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 08:54:07"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 08:54:12"}
+{"level":"info","message":"Statut changé pour https://callvroom.com: warning → up","timestamp":"2026-06-03 08:54:13"}
+{"level":"info","message":"Incidents résolus pour https://callvroom.com","timestamp":"2026-06-03 08:54:13"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://callvroom.com","timestamp":"2026-06-03 08:54:13"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 08:54:17"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 08:54:22"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 08:54:27"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 08:54:32"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 08:54:32"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 08:54:32"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 08:54:42"}
+{"level":"info","message":"Statut changé pour https://affordtogo.com: down → up","timestamp":"2026-06-03 08:54:52"}
+{"level":"info","message":"Incidents résolus pour https://affordtogo.com","timestamp":"2026-06-03 08:54:52"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://affordtogo.com","timestamp":"2026-06-03 08:54:52"}
+{"alerts":{"activeCooldowns":6,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 08:55:00"}
+{"level":"info","message":"Configuration des middlewares...","timestamp":"2026-06-03 08:55:19"}
+{"level":"info","message":"Configuration des routes...","timestamp":"2026-06-03 08:55:19"}
+{"level":"info","message":"Connexion à la base de données...","timestamp":"2026-06-03 08:55:19"}
+{"level":"info","message":"Configuration WebSocket...","timestamp":"2026-06-03 08:55:19"}
+{"level":"info","message":"Démarrage des tâches cron de monitoring","timestamp":"2026-06-03 08:55:19"}
+{"level":"info","message":"Toutes les tâches cron sont démarrées","timestamp":"2026-06-03 08:55:19"}
+{"level":"info","message":"Environnement: undefined","timestamp":"2026-06-03 08:55:19"}
+{"level":"info","message":"URL de santé: http://localhost:3001/health","timestamp":"2026-06-03 08:55:19"}
+{"level":"info","message":"Paramètres applicatifs chargés","timestamp":"2026-06-03 08:55:20"}
+{"level":"error","message":"Configuration SMTP invalide:","timestamp":"2026-06-03 08:55:21"}
+{"level":"info","message":"Service email configuré avec succès","timestamp":"2026-06-03 08:55:22"}
+{"level":"info","message":"Démarrage du service de monitoring","timestamp":"2026-06-03 08:55:24"}
+{"level":"info","message":"68 sites chargés pour monitoring","timestamp":"2026-06-03 08:55:24"}
+{"level":"info","message":"Service de monitoring démarré via cron","timestamp":"2026-06-03 08:55:24"}
+{"level":"info","message":"Client connecté: YI80M47VUCS8c7KwAAAD (User: 9)","timestamp":"2026-06-03 08:59:47"}
+{"level":"debug","message":"Souscription monitoring: 9","timestamp":"2026-06-03 08:59:47"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 09:00:00"}
+{"level":"debug","message":"Nettoyage des cooldowns d'alertes effectué","timestamp":"2026-06-03 09:00:00"}
+{"level":"debug","message":"Désinscription monitoring: 9","timestamp":"2026-06-03 09:00:00"}
+{"level":"info","message":"Client déconnecté: YI80M47VUCS8c7KwAAAD (Raison: client namespace disconnect)","timestamp":"2026-06-03 09:00:00"}
+{"level":"info","message":"Client connecté: Ga8fnExCgF0f2GcvAAAG (User: 9)","timestamp":"2026-06-03 09:00:00"}
+{"level":"debug","message":"Souscription monitoring: 9","timestamp":"2026-06-03 09:00:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 09:00:25"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 09:00:25"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 09:00:25"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 09:00:25"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 09:00:25"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 09:00:25"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 09:00:25"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 09:00:25"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 09:00:25"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 09:00:25"}
+{"level":"info","message":"Statut changé pour https://giftconseils.com/: warning → up","timestamp":"2026-06-03 09:00:26"}
+{"level":"info","message":"Incidents résolus pour https://giftconseils.com/","timestamp":"2026-06-03 09:00:26"}
+{"error_message":null,"level":"info","message":"Alerte envoyée:","recipient_count":1,"response_time":887,"site_id":4,"site_url":"https://giftconseils.com/","status":"up","timestamp":"2026-06-03 09:00:26"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 09:00:30"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 09:00:30"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 09:00:30"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 09:00:30"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 09:00:30"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 09:00:30"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 09:00:30"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 09:00:30"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 09:00:30"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 09:00:30"}
+{"level":"debug","message":"Alerte Slack envoyée","timestamp":"2026-06-03 09:00:31"}
+{"level":"info","message":"Email d'alerte envoyé à ggassou@bostonsolux.com (<def7fac1-a436-f928-9ca0-bfd4181e0b64@bostonsolux.com>)","timestamp":"2026-06-03 09:00:34"}
+{"level":"debug","message":"Emails d'alerte envoyés à 1 utilisateurs","timestamp":"2026-06-03 09:00:34"}
+{"level":"info","message":"Alerte envoyée pour https://giftconseils.com/ à 1 utilisateurs","timestamp":"2026-06-03 09:00:34"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 09:00:35"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 09:00:35"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 09:00:35"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 09:00:35"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 09:00:35"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 09:00:35"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 09:00:35"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 09:00:35"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 09:00:35"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 09:00:35"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 09:00:40"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 09:00:40"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 09:00:40"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 09:00:40"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 09:00:40"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 09:00:40"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 09:00:40"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 09:00:40"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 09:00:40"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 09:00:40"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 09:00:45"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 09:00:45"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 09:00:45"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 09:00:45"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 09:00:45"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 09:00:45"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 09:00:45"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 09:00:45"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 09:00:45"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 09:00:45"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 09:00:50"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 09:00:50"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 09:00:50"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 09:00:50"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 09:00:50"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 09:00:50"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 09:00:50"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 09:00:50"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 09:00:50"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 09:00:50"}
+{"level":"info","message":"Client déconnecté: Ga8fnExCgF0f2GcvAAAG (Raison: transport close)","timestamp":"2026-06-03 09:00:54"}
+{"level":"info","message":"Statut changé pour https://callvroom.com: up → warning","timestamp":"2026-06-03 09:00:54"}
+{"level":"info","message":"Nouvel incident créé pour https://callvroom.com: medium","timestamp":"2026-06-03 09:00:54"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://callvroom.com","timestamp":"2026-06-03 09:00:54"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 09:00:55"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 09:00:55"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 09:00:55"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 09:00:55"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 09:00:55"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 09:00:55"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 09:00:55"}
+{"level":"info","message":"Client connecté: bGWClPIFHqAHrNJEAAAI (User: 9)","timestamp":"2026-06-03 09:00:55"}
+{"level":"debug","message":"Souscription monitoring: 9","timestamp":"2026-06-03 09:00:56"}
+{"level":"info","message":"Client déconnecté: bGWClPIFHqAHrNJEAAAI (Raison: transport close)","timestamp":"2026-06-03 09:01:04"}
+{"level":"info","message":"Client connecté: eXqQnGSI_7GoUgn0AAAK (User: 9)","timestamp":"2026-06-03 09:01:05"}
+{"level":"debug","message":"Souscription monitoring: 9","timestamp":"2026-06-03 09:01:05"}
+{"alerts":{"activeCooldowns":2,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 09:05:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 09:05:25"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 09:05:25"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 09:05:30"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 09:05:30"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 09:05:30"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 09:05:30"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 09:05:30"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 09:05:30"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 09:05:30"}
+{"level":"info","message":"Statut changé pour https://giftconseils.com/: up → warning","timestamp":"2026-06-03 09:05:31"}
+{"level":"info","message":"Nouvel incident créé pour https://giftconseils.com/: medium","timestamp":"2026-06-03 09:05:31"}
+{"level":"debug","message":"Alerte ignorée pour https://giftconseils.com/ (cooldown actif)","timestamp":"2026-06-03 09:05:31"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 09:05:35"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 09:05:35"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 09:05:35"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 09:05:35"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 09:05:35"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 09:05:35"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 09:05:35"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 09:05:35"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 09:05:35"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 09:05:35"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 09:05:40"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 09:05:40"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 09:05:40"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 09:05:40"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 09:05:40"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 09:05:40"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 09:05:40"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 09:05:40"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 09:05:40"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 09:05:40"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 09:05:45"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 09:05:45"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 09:05:45"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 09:05:45"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 09:05:45"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 09:05:45"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 09:05:45"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 09:05:45"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 09:05:45"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 09:05:45"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 09:05:50"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 09:05:50"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 09:05:50"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 09:05:50"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 09:05:50"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 09:05:50"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 09:05:50"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 09:05:50"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 09:05:50"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 09:05:50"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 09:05:55"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 09:05:55"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 09:05:55"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 09:05:55"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 09:05:55"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 09:05:55"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 09:05:55"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 09:05:55"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 09:05:55"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 09:05:55"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 09:06:00"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 09:06:00"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 09:06:00"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 09:06:00"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 09:06:00"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 09:06:00"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 09:06:05"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 09:06:10"}
+{"level":"info","message":"Statut changé pour https://affordtogo.com: up → down","timestamp":"2026-06-03 09:06:20"}
+{"level":"info","message":"Nouvel incident créé pour https://affordtogo.com: high","timestamp":"2026-06-03 09:06:20"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://affordtogo.com","timestamp":"2026-06-03 09:06:20"}
+{"alerts":{"activeCooldowns":3,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 09:10:00"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 09:10:25"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 09:10:25"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 09:10:30"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 09:10:30"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 09:10:35"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 09:10:35"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 09:10:35"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 09:10:35"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 09:10:36"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 09:10:36"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 09:10:36"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 09:10:40"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 09:10:40"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 09:10:40"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 09:10:40"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 09:10:40"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 09:10:40"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 09:10:40"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 09:10:41"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 09:10:41"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 09:10:41"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 09:10:45"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 09:10:45"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 09:10:45"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 09:10:45"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 09:10:45"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 09:10:45"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 09:10:46"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 09:10:46"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 09:10:46"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 09:10:46"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 09:10:50"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 09:10:50"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 09:10:50"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 09:10:50"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 09:10:50"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 09:10:51"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 09:10:51"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 09:10:51"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 09:10:51"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 09:10:51"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 09:10:55"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 09:10:55"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 09:10:55"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 09:10:55"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 09:10:55"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 09:10:55"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 09:10:56"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 09:10:56"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 09:10:56"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 09:10:56"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 09:11:00"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 09:11:00"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 09:11:00"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 09:11:00"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 09:11:01"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 09:11:01"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 09:11:01"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 09:11:01"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 09:11:01"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 09:11:05"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 09:11:05"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 09:11:05"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 09:11:05"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 09:11:10"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 09:11:15"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 09:11:20"}
+{"level":"info","message":"Signal SIGINT reçu, arrêt en cours...","timestamp":"2026-06-03 09:11:44"}
+{"level":"info","message":"Configuration des middlewares...","timestamp":"2026-06-03 09:11:51"}
+{"level":"info","message":"Configuration des routes...","timestamp":"2026-06-03 09:11:51"}
+{"level":"info","message":"Connexion à la base de données...","timestamp":"2026-06-03 09:11:51"}
+{"level":"info","message":"Configuration WebSocket...","timestamp":"2026-06-03 09:11:51"}
+{"level":"info","message":"Démarrage des tâches cron de monitoring","timestamp":"2026-06-03 09:11:51"}
+{"level":"info","message":"Toutes les tâches cron sont démarrées","timestamp":"2026-06-03 09:11:51"}
+{"level":"info","message":"Environnement: undefined","timestamp":"2026-06-03 09:11:51"}
+{"level":"info","message":"URL de santé: http://localhost:3001/health","timestamp":"2026-06-03 09:11:51"}
+{"level":"info","message":"Paramètres applicatifs chargés","timestamp":"2026-06-03 09:11:51"}
+{"level":"info","message":"Client connecté: -uZzLHxUtb2gowcBAAAB (User: 9)","timestamp":"2026-06-03 09:11:52"}
+{"level":"error","message":"Configuration SMTP invalide:","timestamp":"2026-06-03 09:11:53"}
+{"level":"info","message":"Service email configuré avec succès","timestamp":"2026-06-03 09:11:53"}
+{"level":"info","message":"Démarrage du service de monitoring","timestamp":"2026-06-03 09:11:56"}
+{"level":"info","message":"68 sites chargés pour monitoring","timestamp":"2026-06-03 09:11:56"}
+{"level":"info","message":"Service de monitoring démarré via cron","timestamp":"2026-06-03 09:11:56"}
+{"level":"info","message":"Client déconnecté: -uZzLHxUtb2gowcBAAAB (Raison: transport close)","timestamp":"2026-06-03 09:12:04"}
+{"level":"info","message":"Client connecté: SW3Bf8hw6FS-61fVAAAD (User: 9)","timestamp":"2026-06-03 09:12:06"}
+{"level":"debug","message":"Souscription monitoring: 9","timestamp":"2026-06-03 09:12:06"}
+{"level":"debug","message":"Désinscription monitoring: 9","timestamp":"2026-06-03 09:12:15"}
+{"level":"info","message":"Client déconnecté: SW3Bf8hw6FS-61fVAAAD (Raison: client namespace disconnect)","timestamp":"2026-06-03 09:12:15"}
+{"level":"info","message":"Signal SIGINT reçu, arrêt en cours...","timestamp":"2026-06-03 09:13:41"}
+{"level":"info","message":"Configuration des middlewares...","timestamp":"2026-06-03 09:14:01"}
+{"level":"info","message":"Configuration des routes...","timestamp":"2026-06-03 09:14:01"}
+{"level":"info","message":"Connexion à la base de données...","timestamp":"2026-06-03 09:14:01"}
+{"level":"info","message":"Configuration WebSocket...","timestamp":"2026-06-03 09:14:01"}
+{"level":"info","message":"Démarrage des tâches cron de monitoring","timestamp":"2026-06-03 09:14:01"}
+{"level":"info","message":"Toutes les tâches cron sont démarrées","timestamp":"2026-06-03 09:14:01"}
+{"level":"info","message":"Environnement: undefined","timestamp":"2026-06-03 09:14:01"}
+{"level":"info","message":"URL de santé: http://localhost:3001/health","timestamp":"2026-06-03 09:14:01"}
+{"level":"info","message":"Paramètres applicatifs chargés","timestamp":"2026-06-03 09:14:01"}
+{"level":"error","message":"Configuration SMTP invalide:","timestamp":"2026-06-03 09:14:02"}
+{"level":"info","message":"Service email configuré avec succès","timestamp":"2026-06-03 09:14:03"}
+{"level":"info","message":"Démarrage du service de monitoring","timestamp":"2026-06-03 09:14:06"}
+{"level":"info","message":"68 sites chargés pour monitoring","timestamp":"2026-06-03 09:14:06"}
+{"level":"info","message":"Service de monitoring démarré via cron","timestamp":"2026-06-03 09:14:06"}
+{"error":"Route non trouvée - /main.0521bb005489fd8df952.hot-update.json","ip":"127.0.0.1","level":"error","message":"Erreur serveur:","method":"GET","stack":"Error: Route non trouvée - /main.0521bb005489fd8df952.hot-update.json\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\app.js:340:21\n    at Layer.handle [as handle_request] (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\app.js:162:7\n    at Layer.handle [as handle_request] (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at urlencodedParser (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\body-parser\\lib\\types\\urlencoded.js:94:7)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrateur\\monitorpro\\backend\\node_modules\\express\\lib\\router\\index.js:286:9","timestamp":"2026-06-03 09:14:12","url":"/main.0521bb005489fd8df952.hot-update.json","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 09:15:00"}
+{"level":"info","message":"Configuration des middlewares...","timestamp":"2026-06-03 09:18:31"}
+{"level":"info","message":"Configuration des routes...","timestamp":"2026-06-03 09:18:31"}
+{"level":"info","message":"Connexion à la base de données...","timestamp":"2026-06-03 09:18:31"}
+{"level":"info","message":"Configuration WebSocket...","timestamp":"2026-06-03 09:18:31"}
+{"level":"info","message":"Démarrage des tâches cron de monitoring","timestamp":"2026-06-03 09:18:31"}
+{"level":"info","message":"Toutes les tâches cron sont démarrées","timestamp":"2026-06-03 09:18:31"}
+{"level":"info","message":"Environnement: undefined","timestamp":"2026-06-03 09:18:31"}
+{"level":"info","message":"URL de santé: http://localhost:3001/health","timestamp":"2026-06-03 09:18:31"}
+{"level":"info","message":"Paramètres applicatifs chargés","timestamp":"2026-06-03 09:18:31"}
+{"level":"error","message":"Configuration SMTP invalide:","timestamp":"2026-06-03 09:18:33"}
+{"level":"info","message":"Service email configuré avec succès","timestamp":"2026-06-03 09:18:33"}
+{"level":"info","message":"Démarrage du service de monitoring","timestamp":"2026-06-03 09:18:36"}
+{"level":"info","message":"68 sites chargés pour monitoring","timestamp":"2026-06-03 09:18:36"}
+{"level":"info","message":"Service de monitoring démarré via cron","timestamp":"2026-06-03 09:18:36"}
+{"alerts":{"activeCooldowns":0,"cooldownPeriod":600000,"isProcessing":false,"queueLength":0},"level":"debug","message":"Health check:","monitoring":{"currentChecks":0,"isRunning":true,"maxConcurrentChecks":50,"sitesInQueue":68},"timestamp":"2026-06-03 09:20:00"}
+{"level":"debug","message":"Vérification de https://sodexca.com/","timestamp":"2026-06-03 09:23:37"}
+{"level":"debug","message":"Vérification de https://adactchad.org","timestamp":"2026-06-03 09:23:37"}
+{"level":"debug","message":"Vérification de https://bostonsolux.com/","timestamp":"2026-06-03 09:23:37"}
+{"level":"debug","message":"Vérification de https://giftconseils.com/","timestamp":"2026-06-03 09:23:37"}
+{"level":"debug","message":"Vérification de https://Bostonsoluxedu.com","timestamp":"2026-06-03 09:23:37"}
+{"level":"debug","message":"Vérification de https://agrisolux.com","timestamp":"2026-06-03 09:23:37"}
+{"level":"debug","message":"Vérification de https://www.acr-sa.com","timestamp":"2026-06-03 09:23:37"}
+{"level":"debug","message":"Vérification de https://www.bostonsoluxsecurity.com","timestamp":"2026-06-03 09:23:37"}
+{"level":"debug","message":"Vérification de https://www.digitalcom.online","timestamp":"2026-06-03 09:23:37"}
+{"level":"debug","message":"Vérification de https://www.groupesolux.com","timestamp":"2026-06-03 09:23:37"}
+{"level":"info","message":"Statut changé pour https://giftconseils.com/: warning → up","timestamp":"2026-06-03 09:23:39"}
+{"level":"info","message":"Incidents résolus pour https://giftconseils.com/","timestamp":"2026-06-03 09:23:39"}
+{"error_message":null,"level":"info","message":"Alerte envoyée:","recipient_count":1,"response_time":820,"site_id":4,"site_url":"https://giftconseils.com/","status":"up","timestamp":"2026-06-03 09:23:39"}
+{"level":"info","message":"Email d'alerte envoyé à ggassou@bostonsolux.com (<b646d5d5-f298-d785-ebae-063b57d4cf16@bostonsolux.com>)","timestamp":"2026-06-03 09:23:41"}
+{"level":"debug","message":"Emails d'alerte envoyés à 1 utilisateurs","timestamp":"2026-06-03 09:23:41"}
+{"level":"debug","message":"Vérification de https://www.llctogo.com","timestamp":"2026-06-03 09:23:42"}
+{"level":"debug","message":"Vérification de https://www.pharmaciehorizon.com","timestamp":"2026-06-03 09:23:42"}
+{"level":"debug","message":"Vérification de https://www.pharmacielaflammedamour.com","timestamp":"2026-06-03 09:23:42"}
+{"level":"debug","message":"Vérification de https://www.sdege-sa.com","timestamp":"2026-06-03 09:23:42"}
+{"level":"debug","message":"Vérification de https://www.trocadero-ac.com","timestamp":"2026-06-03 09:23:42"}
+{"level":"debug","message":"Vérification de https://www.lyceedekpodzi.com","timestamp":"2026-06-03 09:23:42"}
+{"level":"debug","message":"Vérification de https://www.gdctogo.com","timestamp":"2026-06-03 09:23:42"}
+{"level":"debug","message":"Vérification de https://www.mla-ge.com","timestamp":"2026-06-03 09:23:42"}
+{"level":"debug","message":"Vérification de https://www.pharmaciedekodjoviakope.com","timestamp":"2026-06-03 09:23:42"}
+{"level":"debug","message":"Vérification de https://www.prolabodiagnostics.com","timestamp":"2026-06-03 09:23:42"}
+{"level":"debug","message":"Alerte Slack envoyée","timestamp":"2026-06-03 09:23:43"}
+{"level":"info","message":"Alerte envoyée pour https://giftconseils.com/ à 1 utilisateurs","timestamp":"2026-06-03 09:23:43"}
+{"level":"debug","message":"Vérification de https://www.sodexca.com","timestamp":"2026-06-03 09:23:47"}
+{"level":"debug","message":"Vérification de https://www.ymge-sl.com","timestamp":"2026-06-03 09:23:47"}
+{"level":"debug","message":"Vérification de https://www.itil-africa.com","timestamp":"2026-06-03 09:23:47"}
+{"level":"debug","message":"Vérification de https://www.bpartners-avocats.com","timestamp":"2026-06-03 09:23:47"}
+{"level":"debug","message":"Vérification de https://www.mmh-ge.com","timestamp":"2026-06-03 09:23:47"}
+{"level":"debug","message":"Vérification de https://www.mmie.gob.gq","timestamp":"2026-06-03 09:23:47"}
+{"level":"debug","message":"Vérification de https://www.mtfess.gob.gq","timestamp":"2026-06-03 09:23:47"}
+{"level":"debug","message":"Vérification de https://mtfessge.com","timestamp":"2026-06-03 09:23:47"}
+{"level":"debug","message":"Vérification de https://alumnifaseg30.com","timestamp":"2026-06-03 09:23:47"}
+{"level":"debug","message":"Vérification de https://www.cabinet-nj.com","timestamp":"2026-06-03 09:23:47"}
+{"level":"debug","message":"Vérification de https://www.mcilerocher.org","timestamp":"2026-06-03 09:23:52"}
+{"level":"debug","message":"Vérification de https://bostonsoluxlab.com","timestamp":"2026-06-03 09:23:52"}
+{"level":"debug","message":"Vérification de https://spear2lead.com","timestamp":"2026-06-03 09:23:52"}
+{"level":"debug","message":"Vérification de https://cabinetthomas-td.com","timestamp":"2026-06-03 09:23:52"}
+{"level":"debug","message":"Vérification de https://suzwal.com","timestamp":"2026-06-03 09:23:52"}
+{"level":"debug","message":"Vérification de https://mnf-tchad.org","timestamp":"2026-06-03 09:23:52"}
+{"level":"debug","message":"Vérification de https://theresenadingar.com","timestamp":"2026-06-03 09:23:52"}
+{"level":"debug","message":"Vérification de https://mba-rh.com","timestamp":"2026-06-03 09:23:52"}
+{"level":"debug","message":"Vérification de https://cfk-avocats.com","timestamp":"2026-06-03 09:23:52"}
+{"level":"debug","message":"Vérification de https://cabinetlaurinda.com","timestamp":"2026-06-03 09:23:52"}
+{"level":"debug","message":"Vérification de https://mabuenavista.com","timestamp":"2026-06-03 09:23:57"}
+{"level":"debug","message":"Vérification de https://rehabsolux.com","timestamp":"2026-06-03 09:23:57"}
+{"level":"debug","message":"Vérification de https://linksbusiness.net","timestamp":"2026-06-03 09:23:57"}
+{"level":"debug","message":"Vérification de https://gnon-konde.com","timestamp":"2026-06-03 09:23:57"}
+{"level":"debug","message":"Vérification de https://cabinetgoilar-td.com","timestamp":"2026-06-03 09:23:57"}
+{"level":"debug","message":"Vérification de https://rozydesign.com","timestamp":"2026-06-03 09:23:57"}
+{"level":"debug","message":"Vérification de https://soluxworkplace.com","timestamp":"2026-06-03 09:23:57"}
+{"level":"debug","message":"Vérification de https://charlotteakotiamensah.com","timestamp":"2026-06-03 09:23:57"}
+{"level":"debug","message":"Vérification de https://charlesameganvie.com","timestamp":"2026-06-03 09:23:57"}
+{"level":"debug","message":"Vérification de https://dorikko.com","timestamp":"2026-06-03 09:23:57"}
+{"level":"debug","message":"Vérification de https://victorhabinshuti.Com","timestamp":"2026-06-03 09:24:02"}
+{"level":"debug","message":"Vérification de https://hcrrun-tg.org","timestamp":"2026-06-03 09:24:02"}
+{"level":"debug","message":"Vérification de https://callvroom.com","timestamp":"2026-06-03 09:24:02"}
+{"level":"debug","message":"Vérification de https://leviragefashion.com","timestamp":"2026-06-03 09:24:02"}
+{"level":"debug","message":"Vérification de https://lastarnationalesa.com","timestamp":"2026-06-03 09:24:02"}
+{"level":"debug","message":"Vérification de https://www.justdroit.org","timestamp":"2026-06-03 09:24:02"}
+{"level":"debug","message":"Vérification de https://odeftg.com","timestamp":"2026-06-03 09:24:02"}
+{"level":"debug","message":"Vérification de https://esicobtp-td.com","timestamp":"2026-06-03 09:24:02"}
+{"level":"debug","message":"Vérification de https://togo-mines.com","timestamp":"2026-06-03 09:24:02"}
+{"level":"debug","message":"Vérification de https://sisaaptchad.org","timestamp":"2026-06-03 09:24:02"}
+{"level":"info","message":"Statut changé pour https://callvroom.com: warning → up","timestamp":"2026-06-03 09:24:07"}
+{"level":"info","message":"Incidents résolus pour https://callvroom.com","timestamp":"2026-06-03 09:24:07"}
+{"level":"warn","message":"Aucun utilisateur à notifier pour le site https://callvroom.com","timestamp":"2026-06-03 09:24:07"}
+{"level":"debug","message":"Vérification de https://affordtogo.com","timestamp":"2026-06-03 09:24:07"}
+{"level":"debug","message":"Vérification de https://caderdt.com","timestamp":"2026-06-03 09:24:07"}
+{"level":"debug","message":"Vérification de https://dreamafrica.africa","timestamp":"2026-06-03 09:24:07"}
+{"level":"debug","message":"Vérification de https://agricom-tchad.com","timestamp":"2026-06-03 09:24:07"}
+{"level":"debug","message":"Vérification de https://aeroservice-togo.com","timestamp":"2026-06-03 09:24:07"}
+{"level":"debug","message":"Vérification de https://cais-tchad.com","timestamp":"2026-06-03 09:24:07"}
+{"level":"debug","message":"Vérification de https://www.aplushealthsolutions.com","timestamp":"2026-06-03 09:24:07"}
+{"level":"info","message":"Signal SIGINT reçu, arrêt en cours...","timestamp":"2026-06-03 09:24:58"}
+{"level":"error","message":"Configuration SMTP invalide:","timestamp":"2026-06-03 09:37:18"}

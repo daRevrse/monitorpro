@@ -11,7 +11,6 @@ import { MonitoringProvider } from "./contexts/MonitoringContext";
 
 // Pages publiques
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 
 // Pages protégées
 import Dashboard from "./pages/Dashboard";
@@ -41,7 +40,6 @@ function App() {
             {/* Racine : redirige vers l'app (ou /login si non connecté) */}
             <Route path="/" element={<Navigate to="/app" />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
 
             {/* Routes protégées avec préfixe /app */}
             <Route

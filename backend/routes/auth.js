@@ -234,6 +234,39 @@ router.get("/profile", authenticateToken, async (req, res) => {
   }
 });
 
+// POST /api/auth/verify - Vérifier le token et renvoyer l'utilisateur
+router.post("/verify", authenticateToken, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.user.id, {
+      include: [{ model: Company, as: "company" }],
+      attributes: { exclude: ["password_hash"] },
+    });
+
+    if (!user || !user.is_active) {
+      return res
+        .status(401)
+        .json({ success: false, message: "Utilisateur invalide" });
+    }
+
+    res.json({
+      success: true,
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.getFullName(),
+        first_name: user.first_name,
+        last_name: user.last_name,
+        role: user.role,
+        company_id: user.company_id,
+        company_name: user.company ? user.company.name : null,
+      },
+    });
+  } catch (error) {
+    console.error("Verify error:", error);
+    res.status(500).json({ success: false, message: "Erreur serveur" });
+  }
+});
+
 // Fonctions utilitaires
 function generateAccessToken(user) {
   return jwt.sign(
@@ -293,6 +326,14 @@ router.post(
   ],
   async (req, res) => {
     try {
+      // Création d'utilisateur réservée aux administrateurs
+      if (req.user.role !== "admin") {
+        return res.status(403).json({
+          success: false,
+          message: "Seul un administrateur peut créer des utilisateurs",
+        });
+      }
+
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({

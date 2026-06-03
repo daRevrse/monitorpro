@@ -1,6 +1,6 @@
-// ========================================
-// backend/migrations/001-initial-schema.sql
-// ========================================
+-- ========================================
+-- backend/migrations/001-initial-schema.sql
+-- ========================================
 -- Création de la base de données
 CREATE DATABASE IF NOT EXISTS monitorpro CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE monitorpro;
@@ -105,12 +105,12 @@ CREATE TABLE incidents (
   INDEX idx_severity_time (severity, started_at)
 );
 
--- Données initiales
-INSERT INTO companies (name, slug, subscription_plan, max_sites) VALUES 
-('Administration', 'admin', 'enterprise', 1000),
-('Entreprise Demo', 'demo', 'pro', 100);
+-- Société par défaut (mono-tenant)
+INSERT INTO companies (name, slug, subscription_plan, max_sites) VALUES
+('Administration', 'admin', 'enterprise', 1000);
 
--- Mot de passe par défaut : 'admin123!' (à changer après installation)
-INSERT INTO users (email, password_hash, first_name, last_name, role, company_id, is_active, email_verified) VALUES 
-('admin@monitorpro.com', '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewKyNiwqB6JJ8u4i', 'Admin', 'System', 'admin', 1, TRUE, TRUE);
+-- NOTE : aucun administrateur n'est créé par défaut (sécurité).
+-- Le premier admin se crée au déploiement :
+--   cd backend && npm run create-admin -- <email> <password> <Prénom> <Nom> admin "Administration"
+-- (En Docker : docker compose exec backend node scripts/createUser.js <email> <password> <Prénom> <Nom> admin "Administration")
 

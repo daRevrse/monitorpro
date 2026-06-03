@@ -30,9 +30,12 @@ const authReducer = (state, action) => {
         user: null,
         accessToken: null,
         error: null,
+        loading: false,
       };
     case "UPDATE_TOKEN":
       return { ...state, accessToken: action.payload };
+    case "INIT_DONE":
+      return { ...state, loading: false };
     default:
       return state;
   }
@@ -43,10 +46,11 @@ export const AuthProvider = ({ children }) => {
     isAuthenticated: false,
     user: null,
     accessToken: null,
-    loading: false,
+    loading: true, // true tant que la session initiale n'est pas vérifiée
     error: null,
   });
 
+  // Vérifie un token et restaure l'utilisateur ; renvoie true si OK
   const verifyToken = async (token) => {
     try {
       const response = await fetch("/api/auth/verify", {
@@ -59,30 +63,42 @@ export const AuthProvider = ({ children }) => {
 
       if (response.ok) {
         const data = await response.json();
-        // On remet à jour le contexte si le token est valide
         dispatch({
           type: "LOGIN_SUCCESS",
           payload: { user: data.user, access_token: token },
         });
-      } else {
-        // Token invalide → on tente un refresh
-        await refreshAccessToken();
+        return true;
       }
+      return false;
     } catch (error) {
       console.error("Erreur lors de la vérification du token:", error);
-      await refreshAccessToken();
+      return false;
     }
   };
 
   useEffect(() => {
-    // Vérifier token au démarrage
-    const token = localStorage.getItem("accessToken");
-    const refreshToken = localStorage.getItem("refreshToken");
+    // Restauration de session au démarrage
+    const init = async () => {
+      const token = localStorage.getItem("accessToken");
+      const refreshToken = localStorage.getItem("refreshToken");
 
-    if (token && refreshToken) {
-      // Vérifier validité du token
-      verifyToken(token);
-    }
+      try {
+        if (token && (await verifyToken(token))) {
+          return; // session restaurée
+        }
+        if (refreshToken) {
+          const newToken = await refreshAccessToken();
+          if (newToken) {
+            await verifyToken(newToken);
+          }
+        }
+      } finally {
+        dispatch({ type: "INIT_DONE" });
+      }
+    };
+
+    init();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const login = async (email, password) => {
@@ -105,17 +121,20 @@ export const AuthProvider = ({ children }) => {
           type: "LOGIN_SUCCESS",
           payload: data,
         });
+        return { success: true };
       } else {
         dispatch({
           type: "LOGIN_FAILURE",
           payload: data.message,
         });
+        return { success: false, message: data.message };
       }
     } catch (error) {
       dispatch({
         type: "LOGIN_FAILURE",
         payload: "Erreur de connexion",
       });
+      return { success: false, message: "Erreur de connexion" };
     }
   };
 

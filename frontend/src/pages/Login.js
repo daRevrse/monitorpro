@@ -1,15 +1,11 @@
-// src/pages/Login.js
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Activity, Eye, EyeOff } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff, Loader2, Activity, Bell, ShieldCheck } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
-import Button from "../components/common/Button";
+import { Logo, LogoMark } from "../assets/logo";
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -19,166 +15,172 @@ const Login = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    setError(""); // Effacer l'erreur quand l'utilisateur tape
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setError("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
-
-    try {
-      await login(formData.email, formData.password);
+    const res = await login(formData.email, formData.password);
+    setLoading(false);
+    if (res?.success) {
       navigate("/app/dashboard");
-    } catch (err) {
-      setError(err.message || "Identifiants invalides");
-    } finally {
-      setLoading(false);
+    } else {
+      setError(res?.message || "Identifiants invalides");
     }
   };
 
+  const features = [
+    { icon: Activity, text: "Surveillance HTTP/HTTPS & SSL en temps réel" },
+    { icon: Bell, text: "Alertes instantanées en cas d'incident" },
+    { icon: ShieldCheck, text: "Suivi des hébergements et interventions" },
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        {/* Header */}
-        <div className="text-center">
-          <Link to="/" className="inline-flex items-center justify-center">
-            <div className="w-12 h-12 bg-primary-800 rounded-xl flex items-center justify-center mb-4">
-              <Activity className="w-7 h-7 text-white" />
-            </div>
-          </Link>
-          <h2 className="text-3xl font-bold text-gray-900">
-            Connexion à MonitorPro
-          </h2>
-          <p className="mt-2 text-gray-600">
-            Accédez à votre tableau de bord de monitoring
-          </p>
+    <div className="min-h-screen flex">
+      {/* Panneau de marque */}
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-bordeaux-800 via-bordeaux-900 to-bordeaux-950 text-white p-12 flex-col justify-between relative overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/5" />
+        <div className="absolute -bottom-32 -left-16 w-80 h-80 rounded-full bg-white/5" />
+
+        <div className="relative flex items-center gap-3">
+          <LogoMark size={40} />
+          <span className="text-2xl font-bold tracking-tight">
+            Monitor<span className="text-bordeaux-300">Pro</span>
+          </span>
         </div>
 
-        {/* Formulaire */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
-                {error}
-              </div>
-            )}
+        <div className="relative">
+          <h1 className="text-4xl font-bold leading-tight mb-4">
+            Surveillez. Alertez.
+            <br />
+            Réagissez.
+          </h1>
+          <p className="text-white/70 text-lg mb-8 max-w-md">
+            La plateforme de supervision de vos sites web et hébergements.
+          </p>
+          <ul className="space-y-4">
+            {features.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <li key={i} className="flex items-center gap-3">
+                  <span className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-5 h-5" />
+                  </span>
+                  <span className="text-white/90">{f.text}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
 
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Adresse email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                placeholder="votre@email.com"
-              />
+        <div className="relative text-sm text-white/50">
+          © {new Date().getFullYear()} MonitorPro
+        </div>
+      </div>
+
+      {/* Panneau formulaire */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-6 bg-gray-50">
+        <div className="w-full max-w-md">
+          {/* Logo mobile */}
+          <div className="lg:hidden flex justify-center mb-8">
+            <Logo size={40} />
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">Connexion</h2>
+              <p className="text-gray-500 mt-1">
+                Accédez à votre tableau de bord
+              </p>
             </div>
 
-            <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Mot de passe
-              </label>
-              <div className="relative">
-                <input
-                  id="password"
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  autoComplete="current-password"
-                  required
-                  value={formData.password}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                  placeholder="Votre mot de passe"
-                />
-                <button
-                  type="button"
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? (
-                    <EyeOff className="h-5 w-5 text-gray-400" />
-                  ) : (
-                    <Eye className="h-5 w-5 text-gray-400" />
-                  )}
-                </button>
-              </div>
-            </div>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              {error && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+                  {error}
+                </div>
+              )}
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-                />
+              <div>
                 <label
-                  htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-700"
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-1.5"
                 >
+                  Adresse email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux-500 focus:border-bordeaux-500 transition-colors"
+                  placeholder="votre@email.com"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700 mb-1.5"
+                >
+                  Mot de passe
+                </label>
+                <div className="relative">
+                  <input
+                    id="password"
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    autoComplete="current-password"
+                    required
+                    value={formData.password}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bordeaux-500 focus:border-bordeaux-500 transition-colors"
+                    placeholder="••••••••"
+                  />
+                  <button
+                    type="button"
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                    onClick={() => setShowPassword(!showPassword)}
+                    tabIndex={-1}
+                  >
+                    {showPassword ? (
+                      <EyeOff className="h-5 w-5" />
+                    ) : (
+                      <Eye className="h-5 w-5" />
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <label className="flex items-center gap-2 text-sm text-gray-700">
+                  <input
+                    type="checkbox"
+                    className="h-4 w-4 text-bordeaux-600 focus:ring-bordeaux-500 border-gray-300 rounded"
+                  />
                   Se souvenir de moi
                 </label>
-              </div>
-
-              <div className="text-sm">
-                <a
-                  href="#"
-                  className="text-primary-600 hover:text-primary-500 transition-colors"
-                >
+                <span className="text-sm text-gray-400">
                   Mot de passe oublié ?
-                </a>
+                </span>
               </div>
-            </div>
 
-            <Button
-              type="submit"
-              variant="primary"
-              loading={loading}
-              disabled={!formData.email || !formData.password}
-              className="w-full"
-            >
-              Se connecter
-            </Button>
-          </form>
-
-          <div className="mt-6 text-center">
-            <p className="text-gray-600">
-              Pas encore de compte ?{" "}
-              <Link
-                to="/#signup"
-                className="text-primary-600 hover:text-primary-500 font-medium transition-colors"
+              <button
+                type="submit"
+                disabled={loading || !formData.email || !formData.password}
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-bordeaux-700 text-white font-medium rounded-lg hover:bg-bordeaux-800 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Essai gratuit 14 jours
-              </Link>
-            </p>
+                {loading && <Loader2 className="w-4 h-4 animate-spin" />}
+                {loading ? "Connexion…" : "Se connecter"}
+              </button>
+            </form>
           </div>
-        </div>
-
-        {/* Lien retour */}
-        <div className="text-center">
-          <Link
-            to="/"
-            className="text-gray-600 hover:text-gray-800 transition-colors"
-          >
-            ← Retour au site
-          </Link>
         </div>
       </div>
     </div>

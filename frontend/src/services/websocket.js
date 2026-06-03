@@ -12,7 +12,10 @@ class WebSocketService {
       this.disconnect();
     }
 
-    const WS_URL = process.env.REACT_APP_WS_URL || "http://localhost:3001";
+    // En prod (env vide), on se connecte au même domaine (proxy nginx).
+    const WS_URL =
+      process.env.REACT_APP_WS_URL ||
+      (typeof window !== "undefined" ? window.location.origin : "");
 
     this.socket = io(WS_URL, {
       auth: {

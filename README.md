@@ -4,6 +4,55 @@
 
 MonitorPro est une plateforme complète de monitoring qui vous permet de surveiller la disponibilité, les performances et la santé de vos sites web avec des alertes en temps réel.
 
+## 🚀 Démarrage rapide
+
+### Prérequis
+- **Node.js** 16+ (18 recommandé) et **npm**
+- **MySQL** 8.0+ (ou **Docker** pour tout lancer en conteneurs)
+
+### Option A — Local en un clic (Windows)
+1. Crée la base de données MySQL `monitorpro` et renseigne `backend/.env` (voir `backend/.env.example`).
+2. Applique le schéma : `cd backend && npm install && npm run migrate`
+3. Crée le **premier administrateur** :
+   ```bash
+   npm run create-admin -- admin@exemple.com MotDePasse123 Prénom Nom admin "Administration"
+   ```
+4. Reviens à la racine et **double-clique sur `start.bat`**.
+   Backend → http://localhost:3001 · Frontend → http://localhost:3000
+
+### Option B — Local via npm
+```bash
+# 1. Dépendances (backend + frontend)
+npm run install:all
+
+# 2. Schéma de base de données
+cd backend && npm run migrate
+
+# 3. Premier administrateur
+npm run create-admin -- admin@exemple.com MotDePasse123 Prénom Nom admin "Administration"
+
+# 4. Lancer backend + frontend ensemble (depuis la racine)
+cd .. && npm run dev
+```
+
+### Option C — Docker (déploiement)
+```bash
+# Construire et démarrer MySQL + backend + frontend
+docker compose up -d --build
+
+# Créer le premier administrateur dans le conteneur backend
+docker compose exec backend node scripts/createUser.js \
+  admin@exemple.com MotDePasse123 Prénom Nom admin "Administration"
+```
+Application disponible sur **http://localhost** (le frontend nginx sert l'UI et proxifie `/api` + WebSocket vers le backend). Les migrations SQL sont appliquées automatiquement à la première initialisation de la base.
+
+> ⚠️ En production, définissez des secrets forts via les variables d'environnement
+> `JWT_SECRET`, `JWT_REFRESH_SECRET`, `DB_PASSWORD` (voir `docker-compose.yml`).
+
+> ℹ️ **Inscription publique désactivée.** Il n'y a pas de page d'inscription : le
+> premier administrateur est créé au déploiement (ci-dessus), puis les utilisateurs
+> suivants sont gérés par un admin dans **Paramètres → Utilisateurs**.
+
 ## ✨ Fonctionnalités
 
 ### 🔍 Monitoring Avancé
@@ -243,13 +292,21 @@ Les incidents sont créés automatiquement quand un site tombe en panne :
 ### Avec Docker
 
 ```bash
-# Construire les images
-docker build -t monitorpro-backend ./backend
-docker build -t monitorpro-frontend ./frontend
+# Construire et démarrer toute la stack (MySQL + backend + frontend)
+docker compose up -d --build
 
-# Utiliser docker-compose
-docker-compose up -d
+# Créer le premier administrateur
+docker compose exec backend node scripts/createUser.js \
+  admin@exemple.com MotDePasse123 Prénom Nom admin "Administration"
+
+# Suivre les logs
+docker compose logs -f
 ```
+
+Le frontend (nginx) est exposé sur le port **80** et proxifie `/api` et le WebSocket
+vers le backend. Les migrations SQL sont jouées automatiquement à la première
+initialisation de la base. Pensez à fournir des secrets via l'environnement
+(`JWT_SECRET`, `JWT_REFRESH_SECRET`, `DB_PASSWORD`).
 
 ### Avec PM2 (Production)
 
